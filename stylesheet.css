@@ -63,7 +63,7 @@ a:link{
   text-decoration: none;
   }
 a:visited{
-  color: none;
+  color: red;
   text-decoration: none;
 }
 a:hover{
