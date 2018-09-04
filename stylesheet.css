@@ -59,7 +59,7 @@ a{
   transition: 0.2s;
 }
 a:link{
-  color: inherit;
+  color;
   text-decoration: none;
   }
 a:visited{
