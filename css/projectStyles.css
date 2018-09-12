@@ -162,9 +162,10 @@ b, b .fas{
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  .colDemo{
+  .imgDemo{
     float: none;
     margin: auto;
+    width: 100%
   }
   .bl-container h2{
     max-width: 500px;
