@@ -156,7 +156,7 @@ img{
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 100vh;
 }
 
 #caption {
