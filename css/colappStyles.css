@@ -35,6 +35,9 @@ p{
   padding-right: 15px;
 
 }
+.blogcont :first-child{
+  margin-top: -10px;
+}
 .mySlides{
   display: none
 }
