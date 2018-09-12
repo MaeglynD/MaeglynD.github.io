@@ -104,16 +104,23 @@ a:active{
 }
 
 @media only screen and (max-width: 600px) {
-    #mwq{
-      font-size: 16px;
-    }
-}
-@media only screen and (max-width: 500px) {
   h1{
     font-size: 20px;
   }
   #lhq{
     word-spacing: 20px;
-
+    font-size: 13px;
+  }
+  #req{
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 470px) {
+  #container{
+    width: 400px;
+    margin-left: -200px;
+  }
+  #lhq{
+    word-spacing: 10px;
   }
 }
