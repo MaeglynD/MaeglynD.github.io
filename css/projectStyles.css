@@ -7,9 +7,6 @@ body{
   text-align: center;
   margin-top: 40px;
 }
-#containerr *{
-  overflow-x: hidden;
-}
 h1{
   font-family: "Montserrat";
   font-weight:  lighter;
@@ -75,6 +72,9 @@ a:hover{
   position: absolute;
   left: 0;
   top: 33px;
+}
+#list-container li *{
+  overflow-x: hidden;
 }
 
 .rlw{

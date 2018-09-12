@@ -245,9 +245,11 @@ img{
     text-decoration: none;
     cursor: pointer;
 }
+
 .blogcont img{
   margin-top: -20px;
 }
+
 blockquote{
   border-left: 5px solid #e6e6e6;
   margin: 2em;
@@ -260,6 +262,7 @@ blockquote p{
 .blogcont p {
   margin: 40px 0px;
 }
+
 video{
   width: 100%;
 }
