@@ -7,6 +7,9 @@ body{
   text-align: center;
   margin-top: 40px;
 }
+#containerr *{
+  overflow-x: hidden;
+}
 h1{
   font-family: "Montserrat";
   font-weight:  lighter;
