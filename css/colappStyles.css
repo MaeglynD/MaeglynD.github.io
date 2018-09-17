@@ -278,6 +278,9 @@ video{
 .blogcont h1, h2, h3{
   text-transform: uppercase;
 }
+#list-container li .fa-arrow-right{
+  overflow-x: visible;
+}
 @media only screen and (max-width: 560px) {
   .imq img{
     display: block;
