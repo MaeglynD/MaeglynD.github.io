@@ -106,7 +106,7 @@ img{
   font-size: 13px;
 }
 .item-cont span{
-  text-decoration: line-through;
+  color: black;
 }
 .item-cont a{
   color: #f66;
@@ -263,7 +263,7 @@ blockquote p{
   font-style: italic;
 }
 .blogcont p {
-  margin: 40px 0px;
+  margin: 30px 0px;
 }
 
 video{
@@ -280,6 +280,31 @@ video{
 }
 #list-container li .fa-arrow-right{
   overflow-x: visible;
+}
+.blogcont iframe{
+  width: 100%;
+  height: 400px;
+}
+#moneyBlg{
+  margin-bottom: 50px;
+}
+#moneyBlgP{
+  font-family: "Montserrat", "Roboto", arial, sans-serif;
+  font-size: 18px;
+  margin-bottom: -15px;
+  margin-top: 40px;
+}
+ul#actualList{
+  margin-top: 40px;
+}
+ul#actualList li{
+  margin-left: -20px;
+}
+p.imgabove{
+  margin-bottom: 60px;
+}
+p.imgbelow{
+  margin-top: 50px;
 }
 @media only screen and (max-width: 560px) {
   .imq img{
