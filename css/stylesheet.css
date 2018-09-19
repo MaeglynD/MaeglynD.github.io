@@ -95,8 +95,8 @@ a:active{
   margin-top: 10px;
   font-size: 25px;
   letter-spacing: 14px;
-  color: #9a9a9a;
-  opacity: 0.3;
+  color: rgb(99, 99, 99);
+  opacity: 0.35;
   transition: 0.2s;
 }
 #social i:hover{
