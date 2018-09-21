@@ -294,10 +294,10 @@ video{
   margin-bottom: -15px;
   margin-top: 40px;
 }
-ul#actualList{
+ul.actualList{
   margin-top: 40px;
 }
-ul#actualList li{
+ul.actualList li{
   margin-left: -20px;
 }
 p.imgabove{
@@ -306,6 +306,24 @@ p.imgabove{
 p.imgbelow{
   margin-top: 50px;
 }
+.frame-sp{
+  margin-top: 20px;
+}
+.frameEx{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.frameEx:hover{
+  cursor: pointer;
+}
+.frame-cons{
+  margin-bottom: 20px;
+}
+.frame-list li{
+  margin-left: -20px;
+  color: rgba(68, 68, 68, 0.77);
+}
+
 @media only screen and (max-width: 560px) {
   .imq img{
     display: block;
