@@ -152,9 +152,7 @@ b, b .fas{
   color: black;
   margin-bottom: 14px;
 }
-.def-curs{
-  cursor: default;
-}
+
 @media only screen and (max-width: 820px) {
   #containerr{
     width: 80vw;
