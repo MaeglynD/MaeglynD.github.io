@@ -1,0 +1,55 @@
+.item-cont{
+  margin-top: 30px;
+  text-align: left;
+  line-height: 30px;
+  background-color: white;
+  color: rgb(68, 68, 68);
+  margin-bottom: 30px;
+}
+p{
+  font-family: "Roboto", "Helvectia", arial, sans-serif;
+  letter-spacing: normal;
+  font-weight: 400;
+  font-size: 16px;
+  word-spacing: 1px;
+  color: rgb(102, 102, 102);
+  text-align: left;
+  line-height: 1.8em;
+  padding: 12px 0px;
+}
+
+pre code{
+  font-family: "Roboto Mono";
+  font-size: 13px;
+  line-height: 20px;
+}
+span{
+  color: black;
+}
+.item-cont h2, h3{
+  font-family: "Montserrat", "Helvectia", arial, sans-serif;
+  font-weight: 400;
+}
+.item-cont h2:before{
+  content: '';
+  border-left: 5px solid #f66;
+  margin-left: -15px;
+  padding-right: 15px;
+
+}
+.item-cont a{
+  color: #f66;
+}
+.item-cont a:hover{
+  text-decoration: underline;
+}
+img{
+  vertical-align: middle;
+  width:  100%;
+}
+h4{
+  font-weight: 400;
+}
+.quoteFooter{
+  font-size: 18px;
+}
