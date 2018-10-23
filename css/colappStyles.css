@@ -188,6 +188,13 @@ img{
   padding-right: 15px;
 
 }
+.item-cont .start-g:before{
+  content: '';
+  border-left: 5px solid #7fcd92;
+  margin-left: -15px;
+  padding-right: 15px;
+
+}
 .item-cont #start-y:before{
   content: '';
   border-left: 5px solid #f8be00;
@@ -322,6 +329,74 @@ p.imgbelow{
 .frame-list li{
   margin-left: -20px;
   color: rgba(68, 68, 68, 0.77);
+}
+
+.list-containerFix{
+margin-top: 70px;
+background-color: white;
+
+}
+
+.list-containerFix ul {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 4px;
+}
+.list-containerFix ul li {
+  position: relative;
+  padding: 30px 0 0px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.list-containerFix ul li:first-child {
+  margin-top: -30px;
+}
+.list-containerFix h2,
+.list-containerFix h3 {
+  font-family: "Montserrat";
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.list-containerFix h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-left: 120px;
+  text-align: left;
+  margin:  30px 0px;
+}
+li i{
+  position: absolute;
+  right: 30px;
+  color: rgba(153, 153, 153, 0.5);
+  transition: 0.2s;
+  margin-top: -55px;
+}
+li i:hover{
+  color: rgba(153, 153, 153, 1);
+  cursor: pointer;
+}
+a{
+  color: #444;
+}
+a:hover{
+  color: #f33;
+}
+.list-containerFix h3 {
+  font-size: 13px;
+  color: #999;
+  position: absolute;
+  left: 0;
+  top: 33px;
+}
+.list-containerFix li *{
+  overflow-x: hidden;
+}
+.kaiten p{
+  margin-top: 30px;
+}
+.sass-intro{
+  margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 560px) {
