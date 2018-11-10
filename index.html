@@ -1,25 +1,186 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="nIiOKIKTzRQsr6wSPoSst85cJz6wgJSnvl6Xsb6cOKE" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Maeglyn Davies</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Montserrat|Montserrat:700|Montserrat:200|Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,800" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Maeglyn Davies</title>
   </head>
   <body>
-    <div id="container">
-      <h1>MAEGLYN DAVIES</h1>
-      <p id="req">I make stuff work good and look good. Coder / Designer.</p>
-      <p id="lhq">
-        <a href="pages/projects">Projects</a> <span class="mobileq">|</span>
-        <a href="pages/blog">Blog</a> <span class="mobileq">|</span>
-        <a href="pages/social">Social</a> <span class="mobileq">|</span>
-        <a href="pages/Resume.pdf" target="_blank">Resume</a>
-      </p>
+
+    <nav>
+      <div class="nav-container">
+        <div id="nav-logo">Maeglyn <span>Davies</span></div>
+        <div id="nav-icons">
+          <a data-scroll href="#project-container-scroll"><i class="far fa-folder-open"></i><span class="projects">Projects</span></a>
+          <a data-scroll href="#blog-container-scroll"><i class="far fa-file-alt"></i><span class="blog">Blog</span></a>
+          <a data-scroll href="#skills-container-scroll"><i class="fas fa-wrench"></i><span class="skills">Skills</span></a>
+          <a data-scroll href="#exp-container-scroll"><i class="fas fa-suitcase"></i><span class="exp">Experience</span></a>
+          <a data-scroll href="#contact-container-scroll"><i class="fas fa-phone"></i><span class="contact">Contact</span></a>
+          <div class="chromeFix" id="nightmode"><i class="fas fa-moon"></i>&nbsp;</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main-container">
+      <div class="main-child">
+        <div class="main-text" data-aos="fade-down">
+          <h1><span class="b">Coder</span> & <span class="y"> Designer</span></h1>
+          <p>Hey there! I‘m <span class="y">Maeglyn</span> and I make stuff, break stuff and everything in between. Fullstack dev / Web designer.</p>
+          <a data-scroll href="#contact-container-scroll">Contact</a>
+        </div>
+      </div>
     </div>
+
+      <div class="scroll-fix" id="project-container-scroll"></div>
+
+    <div class="project-container">
+      <div class="project-child">
+        <h1>Projects</h1>
+        <div class="project-flex">
+          <div class="card" data-aos="fade" >
+            <a href="quote-game" class="box"></a>
+            <h2>Quote Game</h2>
+            <span>September 2018</span>
+            <br>
+            <p>A completley reusable and randomized gamemode which gives the user a query with 4 possible answers, 3 of which randomized and all randomly showcased.
+               <b><a href="quote-game">Read More...</a></b></p>
+          </div>
+          <div class="card" data-aos="fade" >
+            <a href="frameworks" class="box k"></a>
+            <h2>Kaiten Coin</h2>
+            <span>September 2018</span>
+            <br>
+            <p>Kaiten coin is a fake blockchain site created to play
+               around with various features of Sass, as well as absolute
+               positioning and other JS dependencies
+               <b><a href="frameworks">Read More...</a></b></p>
+          </div>
+          <div class="card" data-aos="fade">
+            <a href="startpages" class="box s"></a>
+            <h2>Startpages</h2>
+            <span>August 2018</span>
+            <br>
+            <p>Startpages are home screens for a browser. Typically where all the users most visited sites and favourites are stored, showcased and styled.
+               <br><b><a href="startpages">Read More...</a></b></p>
+          </div>
+        </div>
+        <a href="projects" class="view green-gradient">View All</a>
+      </div>
+    </div>
+
+      <div class="scroll-fix" id="blog-container-scroll"></div>
+
+    <div class="blog-container">
+      <div class="blog-child"  data-aos="fade">
+        <h1>Blog</h1>
+        <p>My thoughts on random stuff, usually design / coding related</p>
+        <ul>
+          <a href="skeuomorphic-design"><li><img src="assets/flower.png"><p>What happened to Skeuomorphic design?</p><span>September 2018</span></li></a>
+          <a href="blog"><li><img src="assets/cloud.png"><p>A comprehensive guide on scroll restriction</p><span>Aug 2018</span></li></a>
+        </ul>
+        <a href="blog" class="view green-gradient">View All</a>
+      </div>
+    </div>
+
+      <div class="scroll-fix" id="skills-container-scroll"></div>
+
+    <div class="skills-container">
+      <div class="skills-child">
+        <h1>Technical Abilities</h1>
+        <p>There‘s always more to learn. I mostly specialize in
+           front end but in my free time I‘ll checkout new frameworks
+           / languages</p>
+        <div class="sk-container" data-aos="fade">
+          <div class="sk"><img src="assets/html.png" alt=""><h3>HTML</h3></div>
+          <div class="sk"><img src="assets/css.png" alt=""><h3>CSS</h3></div>
+          <div class="sk"><img src="assets/bootstrap.png" alt=""><h3>Bootstrap</h3></div>
+          <div class="sk"><img src="assets/materialize.png" alt=""><h3>Materialize</h3></div>
+
+          <div class="sk"><img src="assets/sass.png" alt=""><h3>SASS</h3></div>
+          <div class="sk"><img src="assets/javascript.png" alt=""><h3>Javascript</h3></div>
+          <div class="sk"><img src="assets/angular.png" alt=""><h3>Angular</h3></div>
+          <div class="sk"><img src="assets/node.png" alt=""><h3>NodeJS</h3></div>
+
+          <div class="sk"><img src="assets/react.png" alt=""><h3>React</h3></div>
+          <div class="sk"><img src="assets/photoshop.png" alt=""><h3>Photoshop</h3></div>
+          <div class="sk"><img src="assets/git.png" alt=""><h3>GIT</h3></div>
+          <div class="sk"><img src="assets/python.png" alt=""><h3>Python</h3></div>
+        </div>
+      </div>
+    </div>
+
+      <div class="scroll-fix" id="exp-container-scroll"></div>
+
+    <div class="exp-container">
+      <div class="exp-child">
+        <h1>Experience</h1>
+        <p>My commercial experience... this'll be beefed up soon.</p>
+        <div class="job-cont" data-aos="fade">
+          <div class="job-logo-cont">
+            <img src="assets/col.png" alt="">
+            <p>August 2018</p>
+          </div>
+          <div class="jobtext-cont">
+
+            <h3>Web Developer</h3>
+            <p>My favourite uncle‘s currently creating a tech startup
+               company known as COL8 which  deals with video managment
+               and innovative sport tracking technology! I was given
+               the oppurtunity to design and develop a tangent project
+               of theirs based in the electron framework.</p>
+            <ul>
+              <li>Designed the application in photoshop / illustrator and succesfully converted
+	   said design into a responsive website (and application).</li>
+              <li>HTML5, CSS3, Javascript, NodeJS, Electron framework, git(bash)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="scroll-fix" id="contact-container-scroll"></div>
+
+    <div class="contact-container">
+      <div class="contact-child">
+        <h1>Contact</h1>
+        <p>You can hit me up by filling out this form,
+           emailing me at <a href="mailto:maeglyn.davies@gmail.com" class="b">maeglyn.davies@gmail.com</a> or
+            messaging me on <a href="https://discordapp.com/" class="b">discord</a> / <a href="https://twitter.com/MaeglynDavies" class="b">twitter</a></p>
+        <div class="form-container" data-aos="fade">
+          <form action="https://formspree.io/maeglyn.davies@gmail.com" method="POST">
+            <label for="name" required>Name</label>
+            <input type="text" name="name">
+            <label for="email">Email</label>
+            <input type="email" name="_replyto" required>
+            <label for="about">About</label>
+            <textarea type="textarea" name="About" required></textarea>
+            <input type="submit" value="Submit" class="  green-gradient">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-container">
+      <h1>M <span>D</span></h1>
+      <p>If you like what you see feel free to... hire me</p>
+      <a href="https://twitter.com/MaeglynDavies" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://codepen.io/maeglyndavies/" target="_blank" ><i class="fab fa-codepen"></i></a>
+      <a href="https://github.com/MaeglynD" target="_blank" ><i class="fab fa-github"></i></a>
+      <a href="resume.pdf" target="_blank" ><i class="fas fa-file-invoice"></i></a>
+
+    </div>
+    <script src="nightmode.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+
+      var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
   </body>
 </html>

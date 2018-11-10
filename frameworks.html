@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="blogStyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,800|Roboto|Nunito" rel="stylesheet">
+    <title>Maeglyn Davies</title>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-container">
+        <div id="nav-logo">Maeglyn <span>Davies</span></div>
+        <div id="nav-icons">
+          <a href="https://www.maeglyn.xyz"><i class="fas fa-home"></i></a>
+          <div class="chromeFix" id="nightmode"><i class="fas fa-moon"></i>&nbsp;</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="blog-container">
+      <div class="blog-child">
+
+        <span class="date">Oct 2018</span>
+        <h1 class="title">Sass & Kaiten</h1>
+          <img src="newAssets/kaitenDemo.png" alt="">
+        <p class="p-pad-top p-pad-bottom"><a href="https://sass-lang.com/" target="_blank">Sass</a> is a fantastic preprocessor, popular amongst most front end developers for speeding up the entire styling process. Using it has been pretty fun, and to showcase some of sass’s features i decided to create a fake cryptocurrency startup site called <a href="https://kaitencoin.github.io/" target="_blank">‘Kaiten’.</a> In my eyes, the three main features of sass that stood out were; nesting capabilities, variables and mixins. Nesting with sass is easy, simply put the element styles within the parent element’s styles. This becomes useful when you’re working with multiple stylesheets or a large amount of css for clean hierarchical code. But don’t get me wrong, nesting absolutely everything can cause problems,  the two big ones being; media queries are a real pain, the css becomes hard to maintain (especially among multiple developers).</p>
+        <p class=" p-pad-bottom">Variables and mixins can be thought of as a little dose of JS put into the SCSS syntax. Variables are a given, but combine that with mixin’s and we can have multiple css declarations apply to a aforementioned variable. Okay, that's pretty sweet right… but there are a few problems in my eyes with this. Sass is meant to give ‘Syntactically awesome style sheets’, which it does but i think we can all agree a major intended use is to save time. The setup time for sass plus creating the mixins / variables doesn’t seem like it would outway regular css. And if it does we’re talking seconds to minutes, which leads me to think that this idea that sass saves time is a gimmick. But again, that's not to say sass isn’t useful, it’s incredibly useful for; calculations, importing multiple stylesheets, clean hierarchies and such.  In short, whether you should use sass or not depends on what you’re creating. An entire website with a large quantity of information? Yea I’d recommend sass. A blog / personal page / lightweight website? Probably just stick with regular css.</p>
+        <h2 class="list-header">Pros</h2>
+        <ul>
+          <li>Speeds up stylings</li>
+          <li>Good documentation</li>
+          <li>Easy to learn & setup</li>
+          <li>Easy to add to tech stack</li>
+        </ul>
+        <h2 class="red">Cons</h2>
+        <ul class="p-pad-bottom">
+          <li>Debugging is harder</li>
+          <li>Possibly slower performance</li>
+          <li>Maintainence takes longer</li>
+          <li>Hard to take away from stack after use</li>
+        </ul>
+        <span class="date">Aug 2018</span>
+        <h1 class="title">Materialize CSS</h1>
+        <p class=" p-pad-bottom">Working with this framework has been, overall, really fun.
+           There are certainly many benefits to using a well known
+           design schema like material and I think subject matter is
+           the key takeaway here. I’d say, if you have a formal subject
+           matter (e.g. banking, commercial software retail, etc.) then
+           definitely consider materialize and that's not to say that
+           informal subject matters shouldn’t, but more so don’t stick
+           to material rules as strictly. Why? Personality can be lost
+           in the mist of perfect spacing, perfect consistency of colors,
+           fonts and so on.</p>
+        <h2 class="list-header">Pros</h2>
+        <ul>
+           <li>Lightweight (only 29kb)</li>
+           <li>Good documentation</li>
+           <li>Uses Google’s material design</li>
+           <li>Extremely good for mobile development</li>
+           <li>Angular support</li>
+         </ul>
+         <h2 class="red">Cons</h2>
+         <ul>
+           <li>Deviation from Material UI voids materializes purpose</li>
+           <li>Not supported on older browsers</li>
+         </ul>
+        <p class="p-pad-top p-pad-bottom">Below you’ll see a site I whipped up to showcase some of materializes
+           features. To give context, osu is a rhythm game and this site
+           ‘showcases’ some historical scores in the game. It works, but in hindsight
+           I’d have created a fake banking site to really give the framework the credit
+           it deserves. For a site i spent an hour on it's not too bad, also fully responsive.
+           Don’t believe me? Check out the repo!<br><a href="https://github.com/MaeglynD/Osu-Archive">Github Repo</a></p>
+           <img src="newAssets/materializeEx.png">
+      </div>
+    </div>
+    <div class="footer-container">
+      <h1>M <span>D</span></h1>
+      <p>If you like what you see feel free to... hire me</p>
+      <a href="https://twitter.com/MaeglynDavies" target="_blank" ><i class="fab fa-twitter"></i></a>
+      <a href="https://codepen.io/maeglyndavies/" target="_blank" ><i class="fab fa-codepen"></i></a>
+      <a href="https://github.com/MaeglynD" target="_blank" ><i class="fab fa-github"></i></a>
+      <a href="resume.pdf" target="_blank" ><i class="fas fa-file-invoice"></i></a>
+
+    </div>
+    <script src="nightmode.js"></script>
+  </body>
+</html>

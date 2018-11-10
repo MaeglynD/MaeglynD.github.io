@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="blogStyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,800|Roboto|Nunito" rel="stylesheet">
+    <title>Maeglyn Davies</title>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-container">
+        <div id="nav-logo">Maeglyn <span>Davies</span></div>
+        <div id="nav-icons">
+          <a href="https://www.maeglyn.xyz"><i class="fas fa-home"></i></a>
+          <div class="chromeFix" id="nightmode"><i class="fas fa-moon"></i>&nbsp;</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="blog-container">
+      <div class="blog-child">
+
+        <span class="date">Aug 2018</span>
+        <h1 class="title">Col8 Application</h1>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="newAssets/des2.png">
+            </div>
+            <div class="mySlides fade">
+              <img src="newAssets/des1.png">
+            </div>
+            <div class="mySlides fade">
+              <img src="newAssets/des3.png">
+            </div>
+              <span class="prev" id="prev">&#10094;</span>
+              <span class="next" id="next">&#10095;</span>
+            <br>
+            <div class="dot-container">
+              <span class="dot" id="dot1"></span>
+              <span class="dot" id="dot2"></span>
+              <span class="dot" id="dot3"></span>
+            </div>
+        </ul>
+      </div>
+        <p class=" p-pad-bottom">I was tasked with designing and creating a login and upload page
+           for the businesses electron application. I hadn’t had much experience
+           with creating application interfaces before so I kept my avenues open
+           when coming up with design ideas. In hindsight, I should have ironed out
+           exactly what kind of style was wanted from me, but asking a designer to
+           create a login page is like asking a child to create a birthday list.
+           After an hour or so I had created 3 different pages, all with wildly
+           different styles. Definitely huge room for improvement on all of them,
+           but it was a start. The second design was chosen and from there it was
+           a matter of reflecting and refining it to be in the same style as their
+           current design scheme.</p>
+        <h2>Skeleton to final product</h2>
+        <p class="p-pad-bottom">The graphic on the bottom displays what the application looked like before and after. Again, there's a lot of room for improvement but its undoubtedly an upgrade. If you look closer at the last image, you’ll see a couple of design choices done to define the most / least important information. To start, there are a multitude of ways you can separate information like this. I.e, font, font weight, font size, letter spacing and so on. Personally, I decided to go with letter spacing and a slight change in font size to give a more intense feeling to the headers. I also used a tiny bit of box shadow to add elevation from element to background, this alone can work wonders when adding in animations for dragging over. The login page also includes this on the login button. Given a chance to re-do it, I’d rehaul the login page to look more mature, perhaps by putting the login information on its own dialog box to feel more ‘secure’. Maturity in design often reflects the users view of the sites security. With this in mind, if I do venture into more application interface work, I’ll be sure to keep secure, flat, material design as my top priority (especially for login pages).</p>
+        <div class="grid-container">
+          <img src="newAssets/oldcolLogin.png" alt="" id="img1">
+          <img src="newAssets/newcolLogin.png" alt="" id="img2">
+          <img src="newAssets/oldcolUpload.png" alt="" id="img3">
+          <img src="newAssets/newcolUpload.png" alt="" id="img4">
+        </div>
+        <h2 class="p-pad-top">Reflections</h2>
+        <p class="">This project has taught me a lot about design and communication as well as see areas for  improvement in myself. This includes talking through what the design should look like, perhaps have them circle a list of words which they feel resonate with their ideal design, understanding that it's my responsibility to iron out any issues at the start to ensure there are no surprises when the job is finished. From the design side of things, I’ve learnt that pages handling sensitive information should look mature, keep it simple but don’t deviate from the design in use. I'm extremely thankful that Col8 gave me such a great oppurtunity to design for them, in addition to teaching me valuable experiences that I'll keep throughout my career.</p>
+    </div>
+    </div>
+    <div class="footer-container">
+      <h1>M <span>D</span></h1>
+      <p>If you like what you see feel free to... hire me</p>
+      <a href="https://twitter.com/MaeglynDavies" target="_blank" ><i class="fab fa-twitter"></i></a>
+      <a href="https://codepen.io/maeglyndavies/" target="_blank" ><i class="fab fa-codepen"></i></a>
+      <a href="https://github.com/MaeglynD" target="_blank" ><i class="fab fa-github"></i></a>
+      <a href="resume.pdf" target="_blank" ><i class="fas fa-file-invoice"></i></a>
+
+    </div>
+    <script src="scripts/colScripts.js"></script>
+    <script src="nightmode.js"></script>
+  </body>
+</html>
