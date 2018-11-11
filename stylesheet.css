@@ -604,6 +604,14 @@ body.nightmode .contact-container {
       color: white;
       background: rgba(255, 255, 255, 0.13); }
 
+@media only screen and (max-height: 769px) {
+  body {
+    -moz-transform: scale(0.8, 0.8);
+    /* Moz-browsers */
+    zoom: 0.8;
+    /* Other non-webkit browsers */
+    zoom: 80%;
+    /* Webkit browsers */ } }
 @media only screen and (min-width: 650px) {
   .card {
     -webkit-box-flex: 1;
