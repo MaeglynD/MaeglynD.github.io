@@ -1,5 +1,5 @@
 var body = document.getElementsByTagName("BODY")[0];
-var metaTag = document.getElementById("meta");
+var metaTag = document.querySelector('meta[name="viewport"]');
 var x = 0;
 
 if(localStorage.getItem("mode") == "dark"){
