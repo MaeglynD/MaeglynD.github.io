@@ -340,6 +340,8 @@ nav{
       font-size: 17px;
     }
     .sk-container{
+      display: -ms-flexbox;
+       display: -webkit-flex;
       display: flex;
       flex-wrap: wrap;
       padding: 0 20px;
@@ -975,7 +977,22 @@ body.nightmode{
       }
     }
   }
-
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .skills-container{
+      .skills-child{
+        .sk-container{
+          .sk{
+            -ms-flex-align:center;
+            padding: 30px 100px;
+            -ms-flex: 1 0 0;
+            h3{
+              font-size: 12.8px;
+            }
+          }
+        }
+      }
+    }
+  }
 @media only screen and (max-width: 1070px) {
   .project-container{
     .project-child{
@@ -1112,15 +1129,21 @@ body.nightmode{
 }
 @media only screen and (max-width: 476px) {
   .main-container{
+    margin-top: -10px;
     .main-child{
       .main-text{
         p{
-          font-size: 20px;
+          font-size: 16px;
         }
         h1{
-          font-size: 36px;
+          font-size: 30px;
         }
       }
+    }
+  }
+  .project-container{
+    .project-child{
+      padding: 0 20px;
     }
   }
 }
@@ -1160,7 +1183,7 @@ body.nightmode{
     .project-child{
       .project-flex{
         .card{
-          height: 550px;
+          height: 450px;
         }
       }
     }

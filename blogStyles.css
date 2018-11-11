@@ -438,6 +438,7 @@ body.nightmode .blog-container {
   .nav-container #nav-icons {
     z-index: 1;
     height: auto;
+    background-color: white;
     margin: 0;
     margin-left: -20px;
     width: 100vw;

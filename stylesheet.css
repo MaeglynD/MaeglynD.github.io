@@ -315,6 +315,8 @@ nav {
       color: #858787;
       font-size: 17px; }
     .skills-container .skills-child .sk-container {
+      display: -ms-flexbox;
+      display: -webkit-flex;
       display: flex;
       flex-wrap: wrap;
       padding: 0 20px;
@@ -791,6 +793,13 @@ body.nightmode .contact-container {
     .footer-container a {
       font-size: 24px;
       padding: 8px 8px; } }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .skills-container .skills-child .sk-container .sk {
+    -ms-flex-align: center;
+    padding: 30px 100px;
+    -ms-flex: 1 0 0; }
+    .skills-container .skills-child .sk-container .sk h3 {
+      font-size: 12.8px; } }
 @media only screen and (max-width: 1070px) {
   .project-container .project-child .project-flex .card a.box {
     background-color: #fafafa;
@@ -867,10 +876,15 @@ body.nightmode .contact-container {
       margin-right: auto;
       margin-left: auto; } }
 @media only screen and (max-width: 476px) {
-  .main-container .main-child .main-text p {
-    font-size: 20px; }
-  .main-container .main-child .main-text h1 {
-    font-size: 36px; } }
+  .main-container {
+    margin-top: -10px; }
+    .main-container .main-child .main-text p {
+      font-size: 16px; }
+    .main-container .main-child .main-text h1 {
+      font-size: 30px; }
+
+  .project-container .project-child {
+    padding: 0 20px; } }
 @media only screen and (max-width: 541px) {
   .blog-container .blog-child ul li img {
     margin-bottom: 0; } }
@@ -882,7 +896,7 @@ body.nightmode .contact-container {
     margin-right: auto; } }
 @media only screen and (max-width: 350px) {
   .project-container .project-child .project-flex .card {
-    height: 550px; }
+    height: 450px; }
 
   .blog-container .blog-child ul li img {
     display: block;
