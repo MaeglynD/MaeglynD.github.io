@@ -128,10 +128,8 @@ nav{
   color:#4e4e4e;
   padding-bottom: 200px;
   .blog-child{
-    //background-color: lightyellow;
     max-width: 800px;
     margin: auto;
-    //Styles applicable to majority
     img, video{
       width: 100%;
       opacity: 1;
@@ -396,13 +394,137 @@ body.nightmode{
   }
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio:0) {
-  @media only screen and (max-height: 769px) {
-    nav, .blog-child, .footer-container, .project-list-child{
-    zoom: 0.8; /* Other non-webkit browsers */
-    zoom: 80%; /* Webkit browsers */
-
+@media only screen and (max-width: 1367px) {
+  nav{
+    height: 62.4px;
   }
+  .nav-container{
+    max-width: 688px;
+    padding: 0px 16px;
+    padding-right: 11.2px;
+    #nav-logo{
+      font-size: 17.6px;
+      padding-top: 20px;
+    }
+    #nav-icons{
+      padding-top: 12px;
+      font-size: 20px;
+      a, div{
+        padding: 7.2px 12px;
+        margin: 0px 2.4px;
+        .home{
+          margin-left: -35.2px;
+        }
+      }
+      .chromeFix{
+        padding-right: 7.2px;
+      }
+    }
+  }
+  .footer-container{
+    height: 240px;
+    h1{
+      padding-top: 48px;
+      font-size: 32px;
+    }
+    p{
+      font-size: 14.4px;
+    }
+    a{
+      font-size: 24px;
+      padding: 8px 8px;
+    }
+  }
+
+  .blog-container{
+    padding-top: 120px;
+    padding-bottom: 160px;
+    .blog-child{
+      max-width: 640px;
+      img.thumb{
+        width: 48px;
+        margin: 16px 0px;
+      }
+      .date{
+        font-size: 10.4px;
+      }
+      .title{
+        padding-bottom: 16px;
+        margin-top: 6.4px;
+      }
+      h1{
+        font-size: 24px;
+      }
+      p{
+        font-size: 13.6px;
+        word-spacing: 0.8px;
+        line-height: 1.44em;
+      }
+      .p-pad-top{
+        padding-top: 16px;
+      }
+      .p-pad-bottom{
+        padding-bottom: 16px;
+      }
+      blockquote{
+        padding: 12.8px 32px;
+      }
+      pre code {
+        font-size: 10.4px;
+        line-height: 16px;
+      }
+      .font-m{
+        font-size: 16px;
+      }
+      ul li{
+        margin-left: -16px;
+        font-size: 13.6px;
+        padding: 8px 0;
+      }
+      .slideshow-container {
+        .prev, .next {
+          padding: 12.8px;
+          margin-top: -17.6px;
+          font-size: 14.4px;
+        }
+        .dot {
+          height: 8px;
+          width: 8px;
+          margin: 0 1.6px;
+        }
+        .dot-container{
+          font-size: 10.4px;
+        }
+      }
+      .grid-container{
+        padding: 8px;
+        img{
+          padding: 8px;
+        }
+      }
+    }
+    .project-list-child{
+      max-width: 640px;
+      margin-bottom: 271.2px;
+      ul{
+        margin-top: 24px;
+        li{
+          padding: 9.6px 8px;
+          img{
+            width: 32px;
+            margin-bottom: -8px;
+          }
+          p{
+            margin-left: 24px;
+            font-size: 16px;
+          }
+          span{
+            padding-top: 16px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 @media only screen and (max-width: 900px) {
@@ -450,11 +572,11 @@ body.nightmode{
       height: auto;
       //border-top: 2px solid #16161c;
       margin: 0;
-      margin-left: -45px;
-      width: 130vw;
+      margin-left: -20px;
+      width: 100vw;
       float: left;
       padding: 0;
-      margin-top: 20px;
+      margin-top: 18px;
       a, div{
         -webkit-box-shadow: 0 1px 7px rgba(0,0,0,.05);
           box-shadow: 0 1px 7px rgba(0,0,0,.05);

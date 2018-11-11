@@ -721,22 +721,261 @@ body.nightmode{
     }
   }
 }
-/*
-@media only screen and (max-height: 769px) {
-  .main-container{
-    margin-top: -79px;
-    height: 769px;
-  }
-}*/
+
 
 @media only screen and (min-width: 650px) {
   .card{
     -webkit-box-flex: 1;
     flex: 1 1 500px;
   }
-
-
 }
+
+@media only screen and (max-width: 1367px) {
+
+  nav{
+    height: 62.4px;
+  }
+  .nav-container{
+    max-width: 840px;
+    #nav-logo{
+      font-size: 17.6px;
+      padding-top: 20px;
+    }
+    #nav-icons{
+      padding-top: 10px;
+      font-size: 20px;
+        a span{
+          margin-top: 56px;
+          font-size: 15px;
+        }
+      }
+    }
+    .main-container{
+      height: 632px;
+      .main-child{
+        max-width: 840px;
+        .main-text{
+          h1{
+            font-size: 36px;
+          }
+          p{
+            font-size: 19.2px;
+            width: 492px;
+            margin-bottom: 60px;
+          }
+          a{
+            font-size: 17.6px;
+            padding: 16px 24px;
+          }
+        }
+      }
+    }
+
+    .project-container{
+      padding-bottom: 10px;
+      .project-child{
+        max-width: 840px;
+        h1{
+          padding: 56px 0px;
+          font-size: 25.6px;
+        }
+        .project-flex{
+          .card{
+            height: 400px;
+            flex: 1 1 240px;
+            margin: 8px 2.38%;
+            a.box{
+              height: 228px;
+            }
+            h2{
+              margin-bottom: 2.4px;
+            }
+            span{
+              font-size: 10.4px;
+            }
+            p{font-size: 12.8px}
+          }
+        }
+        .view{
+          color: white;
+        }
+
+      }
+    }
+
+    .view{
+      width: 120px;
+      margin-top: 64px;
+      font-size: 16px;
+      padding: 16px 24px;
+      margin-bottom: 80px;
+    }
+    .scroll-fix{
+      margin-top: -62.4px;
+    }
+
+    .blog-container{
+      padding-bottom: 14px;
+      .blog-child{
+        max-width: 840px;
+        padding: 0 16px;
+        .view{
+          margin-top: 240px;
+        }
+        h1{
+          padding-top: 56px;padding-bottom: 8px;
+        }
+        p{
+          font-size: 14.4px;
+        }
+        ul{
+          margin-top: 24px;
+          li{
+            padding: 9.6px 8px;
+            img{
+              width: 32px;
+              margin-bottom: -8px;
+            }
+            p{
+              margin-left: 24px;
+              font-size: 16px;
+            }
+            span{
+              padding-top: 16px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+    .skills-container{
+      padding-bottom: 84px;
+      .skills-child{
+        max-width: 840px;
+        h1{
+          padding-top: 56px;padding-bottom: 16px;
+        }
+        p{
+          line-height: 26.4px;
+          width: 424px;
+          font-size: 13.6px;
+        }
+        .sk-container{
+          padding: 0 16px;
+          margin-top: 24px;
+          .sk{
+            padding: 32px 56.8px;
+            margin: 4px;
+            img{
+              width: 32px;
+            }
+            h3{
+              font-size: 12.8px;
+              letter-spacing: 0.04em;
+            }
+          }
+        }
+      }
+    }
+    .exp-container{
+      padding-bottom: 240px;
+      .exp-child{
+        max-width: 840px;
+        h1{
+          padding-top: 56px;padding-bottom: 16px;
+        }
+        p{
+          line-height: 26.4px;
+          font-size: 13.6px;
+          margin-bottom: 64px;
+        }
+        .job-cont{
+          padding: 0px 16px;
+        }
+        .job-logo-cont{
+          height: 240px;
+          width: 30%;
+          img{
+            min-width: 80px;
+            max-width: 160px;
+          }
+          p{
+            margin-top: 16px;
+            font-size: 14.4px;
+          }
+        }
+        .jobtext-cont{
+          h3{
+            font-size: 16px;
+
+          }
+          p{
+            margin-top: 24px;
+            font-size: 12.8px;
+            line-height: 24px;
+            margin-bottom: 32px;
+          }
+          ul{
+            li{
+              font-size: 12.8px;
+              line-height: 24px;
+              padding: 9.6px 0px;
+            }
+          }
+        }
+      }
+    }
+    .contact-container{
+      padding-bottom: 80px;
+      .contact-child{
+        max-width: 840px;
+        h1{
+          padding-top: 56px;padding-bottom: 16px;
+        }
+        p{
+          line-height: 26.4px;
+          width: 472px;
+          font-size: 13.6px;
+          margin-bottom: 24px;
+        }
+        .form-container{
+          width: 472.5px;
+          padding: 22.5px 37.5px;
+          label{
+            font-size: 12px;
+            padding: 7.5px 0px;
+            padding-top: 15px;
+          }
+          input[type="text"], input[type="email"], textarea{
+            padding: 15px;
+          }
+          textarea{
+            height: 150px;
+          }
+          input[type="submit"]{
+            margin-top: 15px;
+            padding: 14.4px 22.4px;
+            font-size: 14.4px;
+          }
+        }
+      }
+    }
+    .footer-container{
+      height: 240px;
+      h1{
+        padding-top: 48px;
+        font-size: 32px;
+      }
+      p{
+        font-size: 14.4px;
+      }
+      a{
+        font-size: 24px;
+        padding: 8px 8px;
+      }
+    }
+  }
+
 @media only screen and (max-width: 1070px) {
   .project-container{
     .project-child{
@@ -795,13 +1034,12 @@ body.nightmode{
     #nav-icons{
       height: auto;
       background-color: #21222a;
-      //border-top: 2px solid #16161c;
       margin: 0;
       margin-left: -20px;
       width: 100vw;
       float: left;
       padding: 0;
-      margin-top: 20px;
+      margin-top: 18px;
       a, div{
         font-size: 15px;
         text-align: center;
@@ -833,29 +1071,6 @@ body.nightmode{
   }
 
 }
-/*@media only screen and (-webkit-min-device-pixel-ratio:0) {
-  @media only screen and (max-height: 769px) {
-    .main-container, nav, .blog-child, .skills-child, .project-child, .exp-child, .footer-container {
-        zoom: 0.8;
-        zoom: 80%;
-
-    }
-    .contact-child{
-      zoom: 0.74;
-      zoom: 74%;
-    }
-    .scroll-fix{
-      margin-top: -63px;
-    }
-  }
-  @media only screen and (max-width: 750px){
-    nav .nav-container{
-      #nav-icons{
-        width: 124vw;
-      }
-    }
-  }
-}*/
 @media only screen and (max-width: 700px) {
   .blog-container{
     .blog-child{
@@ -864,7 +1079,6 @@ body.nightmode{
       ul{
         li{
           p{
-            //background-color: yellow;
             width: 80%;
           }
           span{

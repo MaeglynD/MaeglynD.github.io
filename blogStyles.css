@@ -320,12 +320,103 @@ body.nightmode .blog-container {
     body.nightmode .blog-container .project-list-child ul li:hover {
       background-color: #262933; }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 0) and (max-height: 769px) {
-  nav, .blog-child, .footer-container, .project-list-child {
-    zoom: 0.8;
-    /* Other non-webkit browsers */
-    zoom: 80%;
-    /* Webkit browsers */ } }
+@media only screen and (max-width: 1367px) {
+  nav {
+    height: 62.4px; }
+
+  .nav-container {
+    max-width: 688px;
+    padding: 0px 16px;
+    padding-right: 11.2px; }
+    .nav-container #nav-logo {
+      font-size: 17.6px;
+      padding-top: 20px; }
+    .nav-container #nav-icons {
+      padding-top: 12px;
+      font-size: 20px; }
+      .nav-container #nav-icons a, .nav-container #nav-icons div {
+        padding: 7.2px 12px;
+        margin: 0px 2.4px; }
+        .nav-container #nav-icons a .home, .nav-container #nav-icons div .home {
+          margin-left: -35.2px; }
+      .nav-container #nav-icons .chromeFix {
+        padding-right: 7.2px; }
+
+  .footer-container {
+    height: 240px; }
+    .footer-container h1 {
+      padding-top: 48px;
+      font-size: 32px; }
+    .footer-container p {
+      font-size: 14.4px; }
+    .footer-container a {
+      font-size: 24px;
+      padding: 8px 8px; }
+
+  .blog-container {
+    padding-top: 120px;
+    padding-bottom: 160px; }
+    .blog-container .blog-child {
+      max-width: 640px; }
+      .blog-container .blog-child img.thumb {
+        width: 48px;
+        margin: 16px 0px; }
+      .blog-container .blog-child .date {
+        font-size: 10.4px; }
+      .blog-container .blog-child .title {
+        padding-bottom: 16px;
+        margin-top: 6.4px; }
+      .blog-container .blog-child h1 {
+        font-size: 24px; }
+      .blog-container .blog-child p {
+        font-size: 13.6px;
+        word-spacing: 0.8px;
+        line-height: 1.44em; }
+      .blog-container .blog-child .p-pad-top {
+        padding-top: 16px; }
+      .blog-container .blog-child .p-pad-bottom {
+        padding-bottom: 16px; }
+      .blog-container .blog-child blockquote {
+        padding: 12.8px 32px; }
+      .blog-container .blog-child pre code {
+        font-size: 10.4px;
+        line-height: 16px; }
+      .blog-container .blog-child .font-m {
+        font-size: 16px; }
+      .blog-container .blog-child ul li {
+        margin-left: -16px;
+        font-size: 13.6px;
+        padding: 8px 0; }
+      .blog-container .blog-child .slideshow-container .prev, .blog-container .blog-child .slideshow-container .next {
+        padding: 12.8px;
+        margin-top: -17.6px;
+        font-size: 14.4px; }
+      .blog-container .blog-child .slideshow-container .dot {
+        height: 8px;
+        width: 8px;
+        margin: 0 1.6px; }
+      .blog-container .blog-child .slideshow-container .dot-container {
+        font-size: 10.4px; }
+      .blog-container .blog-child .grid-container {
+        padding: 8px; }
+        .blog-container .blog-child .grid-container img {
+          padding: 8px; }
+    .blog-container .project-list-child {
+      max-width: 640px;
+      margin-bottom: 271.2px; }
+      .blog-container .project-list-child ul {
+        margin-top: 24px; }
+        .blog-container .project-list-child ul li {
+          padding: 9.6px 8px; }
+          .blog-container .project-list-child ul li img {
+            width: 32px;
+            margin-bottom: -8px; }
+          .blog-container .project-list-child ul li p {
+            margin-left: 24px;
+            font-size: 16px; }
+          .blog-container .project-list-child ul li span {
+            padding-top: 16px;
+            font-size: 16px; } }
 @media only screen and (max-width: 900px) {
   .blog-container .blog-child {
     max-width: 90%; }
@@ -348,11 +439,11 @@ body.nightmode .blog-container {
     z-index: 1;
     height: auto;
     margin: 0;
-    margin-left: -45px;
-    width: 130vw;
+    margin-left: -20px;
+    width: 100vw;
     float: left;
     padding: 0;
-    margin-top: 20px; }
+    margin-top: 18px; }
     .nav-container #nav-icons a, .nav-container #nav-icons div {
       -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.05);
       box-shadow: 0 1px 7px rgba(0, 0, 0, 0.05);
