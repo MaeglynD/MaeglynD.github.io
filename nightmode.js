@@ -34,9 +34,9 @@ night.onclick = function(){
 function viewportOnLoad(){
   console.log(window.innerWidth);
   if(window.innerWidth < 1370){
-    meta.setAttribute("content", "width=device-width, initial-scale=0.8");
+    metaTag.setAttribute("content", "width=device-width, initial-scale=0.8");
   }else{
-    meta.setAttribute("content", "width=device-width, initial-scale=1");
+    metaTag.setAttribute("content", "width=device-width, initial-scale=1");
   }
 }
 viewportOnLoad();
