@@ -320,10 +320,8 @@ body.nightmode .blog-container {
     body.nightmode .blog-container .project-list-child ul li:hover {
       background-color: #262933; }
 
-@media only screen and (max-height: 769px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 0) and (max-height: 769px) {
   nav, .blog-child, .footer-container, .project-list-child {
-    -moz-transform: scale(0.8, 0.8);
-    /* Moz-browsers */
     zoom: 0.8;
     /* Other non-webkit browsers */
     zoom: 80%;

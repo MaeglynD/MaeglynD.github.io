@@ -604,18 +604,14 @@ body.nightmode .contact-container {
       color: white;
       background: rgba(255, 255, 255, 0.13); }
 
-@media only screen and (max-height: 769px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 0) and (max-height: 769px) {
   .main-container, nav, .blog-child, .skills-child, .project-child, .exp-child, .footer-container {
-    -moz-transform: scale(0.8, 0.8);
-    /* Moz-browsers */
     zoom: 0.8;
     /* Other non-webkit browsers */
     zoom: 80%;
     /* Webkit browsers */ }
 
   .contact-child {
-    -moz-transform: scale(0.74, 0.74);
-    /* Moz-browsers */
     zoom: 0.74;
     /* Other non-webkit browsers */
     zoom: 74%;
