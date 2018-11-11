@@ -1056,7 +1056,7 @@ body.nightmode{
       width: 100vw;
       float: left;
       padding: 0;
-      margin-top: 18px;
+      margin-top: 16px;
       a, div{
         font-size: 15px;
         text-align: center;
@@ -1172,6 +1172,15 @@ body.nightmode{
             margin-left: 30px;
             margin-right: auto;
           }
+        }
+      }
+    }
+  }
+  .skills-container{
+    .skills-child{
+      .sk-container{
+        .sk{
+          padding: 30px 80px;
         }
       }
     }
