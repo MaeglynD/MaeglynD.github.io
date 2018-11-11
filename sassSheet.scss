@@ -722,10 +722,19 @@ body.nightmode{
   }
 }
 @media only screen and (max-height: 769px) {
-  body {
+  .main-container, nav, .blog-child, .skills-child, .project-child, .exp-child, .footer-container {
       -moz-transform: scale(0.8, 0.8); /* Moz-browsers */
       zoom: 0.8; /* Other non-webkit browsers */
       zoom: 80%; /* Webkit browsers */
+
+  }
+  .contact-child{
+    -moz-transform: scale(0.74, 0.74); /* Moz-browsers */
+    zoom: 0.74; /* Other non-webkit browsers */
+    zoom: 74%; /* Webkit browsers */
+  }
+  .scroll-fix{
+    margin-top: -63px;
   }
 }
 
@@ -798,7 +807,7 @@ body.nightmode{
       //border-top: 2px solid #16161c;
       margin: 0;
       margin-left: -20px;
-      width: 100vw;
+      width: 125vw;
       float: left;
       padding: 0;
       margin-top: 20px;
