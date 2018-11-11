@@ -604,6 +604,10 @@ body.nightmode .contact-container {
       color: white;
       background: rgba(255, 255, 255, 0.13); }
 
+@media only screen and (max-height: 769px) {
+  .main-container {
+    margin-top: -79px;
+    height: 769px; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 0) and (max-height: 769px) {
   .main-container, nav, .blog-child, .skills-child, .project-child, .exp-child, .footer-container {
     zoom: 0.8;

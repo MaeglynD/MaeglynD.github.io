@@ -721,6 +721,12 @@ body.nightmode{
     }
   }
 }
+@media only screen and (max-height: 769px) {
+  .main-container{
+    margin-top: -79px;
+    height: 769px;
+  }
+}
 @media only screen and (-webkit-min-device-pixel-ratio:0) {
   @media only screen and (max-height: 769px) {
     .main-container, nav, .blog-child, .skills-child, .project-child, .exp-child, .footer-container {
