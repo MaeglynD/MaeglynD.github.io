@@ -371,7 +371,7 @@ body.nightmode .blog-container {
       .blog-container .blog-child p {
         font-size: 13.6px;
         word-spacing: 0.8px;
-        line-height: 1.44em; }
+        line-height: 1.8em; }
       .blog-container .blog-child .p-pad-top {
         padding-top: 16px; }
       .blog-container .blog-child .p-pad-bottom {
@@ -380,7 +380,7 @@ body.nightmode .blog-container {
         padding: 12.8px 32px; }
       .blog-container .blog-child pre code {
         font-size: 10.4px;
-        line-height: 16px; }
+        line-height: 20px; }
       .blog-container .blog-child .font-m {
         font-size: 16px; }
       .blog-container .blog-child ul li {
