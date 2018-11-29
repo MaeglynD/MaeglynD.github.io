@@ -508,9 +508,9 @@ body.nightmode .nav-container {
   color: #91d2fa; }
   body.nightmode .nav-container #nav-logo span {
     color: #c0ccda; }
-  body.nightmode .nav-container #nav-icons div {
+  body.nightmode .nav-container #nav-icons #nightmode {
     background-color: #2d2d2d; }
-    body.nightmode .nav-container #nav-icons div i {
+    body.nightmode .nav-container #nav-icons #nightmode i {
       color: #fea700; }
 body.nightmode .main-container {
   background: #34363d; }
