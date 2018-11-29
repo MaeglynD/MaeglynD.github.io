@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700,800" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="scripts/animated-scroll-to.js"></script>
     <title>Maeglyn Davies</title>
   </head>
   <body>
@@ -16,11 +17,11 @@
       <div class="nav-container">
         <div id="nav-logo">Maeglyn <span>Davies</span></div>
         <div id="nav-icons">
-          <a data-scroll href="#projects"><i class="far fa-folder-open"></i><span class="projects">Projects</span></a>
-          <a data-scroll href="#blog"><i class="far fa-file-alt"></i><span class="blog">Blog</span></a>
-          <a data-scroll href="#skills"><i class="fas fa-wrench"></i><span class="skills">Skills</span></a>
-          <a data-scroll href="#exp"><i class="fas fa-suitcase"></i><span class="exp">Experience</span></a>
-          <a data-scroll href="#contact"><i class="fas fa-phone"></i><span class="contact">Contact</span></a>
+          <div id="scr-prj"><i class="far fa-folder-open"></i><span class="projects">Projects</span></div>
+        <div id="scr-blg"><i class="far fa-file-alt"></i><span class="blog">Blog</span></div>
+          <div id="scr-skl"><i class="fas fa-wrench"></i><span class="skills">Skills</span></div>
+          <div id="scr-exp"><i class="fas fa-suitcase"></i><span class="exp">Experience</span></div>
+          <div id="scr-cont"><i class="fas fa-phone"></i><span class="contact">Contact</span></div>
           <div class="chromeFix" id="nightmode"><i class="fas fa-moon"></i>&nbsp;</div>
         </div>
       </div>
@@ -175,12 +176,22 @@
 
     </div>
     <script src="nightmode.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14.0/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();
 
-      var scroll = new SmoothScroll('a[href*="#"]');
+      function getId(x){
+        return document.getElementById(x);
+      }
+      function animateVer(x){
+        return function(){animateScrollTo(document.getElementById(x))}
+      }
+      getId("scr-prj").onclick = animateVer('projects');
+      getId("scr-blg").onclick = animateVer('blog');
+      getId("scr-skl").onclick = animateVer('skills');
+      getId("scr-exp").onclick = animateVer('exp');
+      getId("scr-cont").onclick = animateVer('contact');
+
     </script>
   </body>
 </html>
