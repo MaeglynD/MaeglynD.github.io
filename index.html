@@ -32,7 +32,7 @@
         <div class="main-text" data-aos="fade-down">
           <h1><span class="b">Coder</span> & <span class="y"> Designer</span></h1>
           <p>Hey there! I‘m <span class="y">Maeglyn</span> and I make stuff, break stuff and everything in between. Fullstack dev / Web designer.</p>
-          <a data-scroll href="#contact">Contact</a>
+          <div id="scr-cont2">Contact</div>
         </div>
       </div>
     </div>
@@ -44,14 +44,14 @@
         <h1>Projects</h1>
         <div class="project-flex">
           <div class="card" data-aos="fade">
-            <a href="quote-game" class="box"></a>
-            <h2>Quote Game</h2>
-            <span>September 2018</span>
+            <a href="papes" class="box p"></a>
+            <h2>Papes</h2>
+            <span>November 2018</span>
             <br>
-            <p>A completley reusable and randomized gamemode which gives the user a query with 4 possible answers, 3 of which randomized and all randomly showcased.
-               <b><a href="quote-game">Read More...</a></b></p>
+            <p>A wallpaper sharing / showcasing site created to test out the features of vuetify, vueJS, vue router, nuxt and more. Designed according to material rules
+               <b><a href="papes">Read More...</a></b></p>
           </div>
-          <div class="card" data-aos="fade" >
+          <div class="card" data-aos="fade">
             <a href="frameworks" class="box k"></a>
             <h2>Kaiten Coin</h2>
             <span>September 2018</span>
@@ -61,13 +61,13 @@
                positioning and other JS dependencies
                <b><a href="frameworks">Read More...</a></b></p>
           </div>
-          <div class="card" data-aos="fade">
-            <a href="startpages" class="box s"></a>
-            <h2>Startpages</h2>
-            <span>August 2018</span>
+          <div class="card" data-aos="fade" >
+            <a href="quote-game" class="box q"></a>
+            <h2>Quote Game</h2>
+            <span>September 2018</span>
             <br>
-            <p>Startpages are home screens for a browser. Typically where all the users most visited sites and favourites are stored, showcased and styled.
-               <br><b><a href="startpages">Read More...</a></b></p>
+            <p>A completley reusable and randomized gamemode which gives the user a query with 4 possible answers, 3 of which randomized and all randomly showcased.
+               <b><a href="quote-game">Read More...</a></b></p>
           </div>
         </div>
         <a href="projects" class="view green-gradient">View All</a>
@@ -191,6 +191,7 @@
       getId("scr-skl").onclick = animateVer('skills');
       getId("scr-exp").onclick = animateVer('exp');
       getId("scr-cont").onclick = animateVer('contact');
+      getId("scr-cont2").onclick = animateVer('contact');
 
     </script>
   </body>

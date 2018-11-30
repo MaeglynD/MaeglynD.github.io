@@ -139,7 +139,9 @@ nav{
         width: 615px;
         margin-bottom: 60px;
       }
-      a{
+      div{
+        margin: auto;
+        width: 145px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.13), 0 3px 6px rgba(0,0,0,0.20);
         color: #dcdcde;
         text-decoration: none;
@@ -152,6 +154,7 @@ nav{
         transition: 0.2s;
         &:hover{
           background-color: rgba(255, 255, 255, 0.1);
+          cursor: pointer;
         }
       }
     }
@@ -208,8 +211,8 @@ nav{
         a.k{
           background-image: url("assets/kaiten.png");
         }
-        a.s{
-          background-image: url("assets/startpage.png");
+        a.p{
+          background-image: url("assets/papes.png");
         }
         h2{
           font-weight: 800;
@@ -485,7 +488,7 @@ nav{
       width: 590px;
       color: #858787;
       font-size: 17px;
-      margin-bottom: 30px;
+      margin-bottom: 0px;
       .b{
         color: #2fe3e3;
         text-decoration: none;
@@ -495,7 +498,7 @@ nav{
       width: 630px;
       padding: 30px 50px;
       border-radius: 10px;
-      background-color: rgba(226, 226, 226, 0.2);
+
       margin: auto;
         margin-top: 0;
         text-align: left;
@@ -711,7 +714,7 @@ body.nightmode{
         color: #8899a6;
       }
       .form-container{
-        background-color: #262933;
+        
       }
       input[type="submit"]{
           background: rgba(255, 255, 255, 0.07);
@@ -998,7 +1001,7 @@ body.nightmode{
     .project-child{
       .project-flex{
         .card{
-          a.box{
+          a.q, a.k{
             background-color: #fafafa;
             background-size: contain;
             -moz-background-size: contain;

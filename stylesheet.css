@@ -128,7 +128,9 @@ nav {
         font-size: 24px;
         width: 615px;
         margin-bottom: 60px; }
-      .main-container .main-child .main-text a {
+      .main-container .main-child .main-text div {
+        margin: auto;
+        width: 145px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.2);
         color: #dcdcde;
         text-decoration: none;
@@ -139,8 +141,9 @@ nav {
         background-color: rgba(255, 255, 255, 0.05);
         padding: 20px 30px;
         transition: 0.2s; }
-        .main-container .main-child .main-text a:hover {
-          background-color: rgba(255, 255, 255, 0.1); }
+        .main-container .main-child .main-text div:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          cursor: pointer; }
 
 .scroll-fix {
   position: absolute;
@@ -192,8 +195,8 @@ nav {
             box-shadow: 0 7px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12); }
         .project-container .project-child .project-flex .card a.k {
           background-image: url("assets/kaiten.png"); }
-        .project-container .project-child .project-flex .card a.s {
-          background-image: url("assets/startpage.png"); }
+        .project-container .project-child .project-flex .card a.p {
+          background-image: url("assets/papes.png"); }
         .project-container .project-child .project-flex .card h2 {
           font-weight: 800;
           margin-bottom: 3px; }
@@ -440,7 +443,7 @@ nav {
       width: 590px;
       color: #858787;
       font-size: 17px;
-      margin-bottom: 30px; }
+      margin-bottom: 0px; }
       .contact-container .contact-child p .b {
         color: #2fe3e3;
         text-decoration: none; }
@@ -448,7 +451,6 @@ nav {
       width: 630px;
       padding: 30px 50px;
       border-radius: 10px;
-      background-color: rgba(226, 226, 226, 0.2);
       margin: auto;
       margin-top: 0;
       text-align: left; }
@@ -598,8 +600,6 @@ body.nightmode .contact-container {
     color: #bec6d5; }
   body.nightmode .contact-container .contact-child p, body.nightmode .contact-container .contact-child label {
     color: #8899a6; }
-  body.nightmode .contact-container .contact-child .form-container {
-    background-color: #262933; }
   body.nightmode .contact-container .contact-child input[type="submit"] {
     background: rgba(255, 255, 255, 0.07); }
     body.nightmode .contact-container .contact-child input[type="submit"]:hover {
@@ -801,7 +801,7 @@ body.nightmode .contact-container {
     .skills-container .skills-child .sk-container .sk h3 {
       font-size: 12.8px; } }
 @media only screen and (max-width: 1070px) {
-  .project-container .project-child .project-flex .card a.box {
+  .project-container .project-child .project-flex .card a.q, .project-container .project-child .project-flex .card a.k {
     background-color: #fafafa;
     background-size: contain;
     -moz-background-size: contain;
