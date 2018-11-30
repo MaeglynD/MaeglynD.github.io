@@ -287,6 +287,9 @@ nav {
           color: #c2c2c2;
           text-align: right; }
 
+.scroll {
+  height: 100vh; }
+
 body.nightmode nav {
   background-color: #262933; }
   body.nightmode nav .nav-container #nav-logo {

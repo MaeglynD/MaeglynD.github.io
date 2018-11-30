@@ -250,7 +250,7 @@ nav {
     margin: auto;
     padding: 0 20px; }
     .blog-container .blog-child .view {
-      margin-top: 300px;
+      margin-top: 193px;
       color: white; }
     .blog-container .blog-child h1 {
       font-weight: 800;
@@ -622,8 +622,8 @@ body.nightmode .contact-container {
     .nav-container #nav-icons {
       padding-top: 10px;
       font-size: 20px; }
-      .nav-container #nav-icons a span {
-        margin-top: 56px;
+      .nav-container #nav-icons div span {
+        margin-top: 47px;
         font-size: 15px; }
 
   .main-container {
@@ -678,7 +678,7 @@ body.nightmode .contact-container {
       max-width: 840px;
       padding: 0 16px; }
       .blog-container .blog-child .view {
-        margin-top: 240px; }
+        margin-top: 154.4px; }
       .blog-container .blog-child h1 {
         padding-top: 56px;
         padding-bottom: 8px; }
