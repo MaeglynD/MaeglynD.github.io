@@ -95,16 +95,8 @@ nav {
 .main-container {
   width: 100%;
   height: 790px;
-  background: #30353a;
-  /* Old browsers */
-  background: #30353a;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #30353a 0%, #31343d 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #30353a 0%, #31343d 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #30353a 0%, #31343d 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+  background: -webkit-gradient(linear, left top, right bottom, from(#292C33), to(#393d47));
+  background: linear-gradient(to bottom right, #292C33, #393d47); }
   .main-container .main-child {
     height: inherit;
     max-width: 1050px;
@@ -118,7 +110,9 @@ nav {
       .main-container .main-child .main-text .b {
         color: #45bafc; }
       .main-container .main-child .main-text .y {
-        color: #f2d97b; }
+        color: #e2c891; }
+      .main-container .main-child .main-text .bold {
+        font-weight: 700; }
       .main-container .main-child .main-text h1 {
         color: white;
         font-size: 45px;
@@ -801,13 +795,11 @@ body.nightmode .contact-container {
     .skills-container .skills-child .sk-container .sk h3 {
       font-size: 12.8px; } }
 @media only screen and (max-width: 1070px) {
-  .project-container .project-child .project-flex .card a.q, .project-container .project-child .project-flex .card a.k {
+  .project-container .project-child .project-flex .card a.q {
     background-color: #fafafa;
     background-size: contain;
     -moz-background-size: contain;
-    -webkit-background-size: contain; }
-  .project-container .project-child .project-flex .card a.k {
-    background-color: #bc8ab8; } }
+    -webkit-background-size: contain; } }
 @media only screen and (max-width: 900px) {
   .exp-container .exp-child .job-logo-cont {
     height: auto;

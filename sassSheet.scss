@@ -111,11 +111,8 @@ nav{
 .main-container{
   width: 100%;
   height: 790px;
-  background: #30353a; /* Old browsers */
-  background: #30353a; /* Old browsers */
-  background: -moz-linear-gradient(left, #30353a 0%, #31343d 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #30353a 0%,#31343d 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #30353a 0%,#31343d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-gradient(linear,left top,right bottom,from(#292C33),to(#393d47));
+background: linear-gradient(to bottom right,#292C33,#393d47);
   .main-child{
     height: inherit;
     max-width: 1050px;
@@ -127,7 +124,8 @@ nav{
       text-align: center;
       margin: auto;
       .b{color: #45bafc}
-      .y{color: #f2d97b}
+      .y{color: #e2c891; }
+      .bold{font-weight: 700};
       h1{
         color: white;
         font-size: 45px;
@@ -1002,14 +1000,11 @@ body.nightmode{
     .project-child{
       .project-flex{
         .card{
-          a.q, a.k{
+          a.q{
             background-color: #fafafa;
             background-size: contain;
             -moz-background-size: contain;
             -webkit-background-size: contain;
-          }
-          a.k{
-            background-color: #bc8ab8;
           }
         }
       }
