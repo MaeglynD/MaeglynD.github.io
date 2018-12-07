@@ -58,38 +58,38 @@ nav {
     height: inherit; }
     .nav-container #nav-icons:hover {
       cursor: default; }
-    .nav-container #nav-icons a, .nav-container #nav-icons div {
+    .nav-container #nav-icons div {
       text-decoration: none;
       border-radius: 10px;
       padding: 9px 15px;
       margin: 0px 10px; }
-      .nav-container #nav-icons a:hover, .nav-container #nav-icons div:hover {
-        cursor: pointer;
-        background-color: #16161c; }
-        .nav-container #nav-icons a:hover span, .nav-container #nav-icons div:hover span {
-          opacity: 0.7; }
-      .nav-container #nav-icons a span, .nav-container #nav-icons div span {
+      .nav-container #nav-icons div:hover {
         background-color: #16161c;
-        border-radius: 5px;
-        padding: 5px 10px;
-        text-align: left;
-        position: absolute;
-        margin-left: -42px;
-        margin-top: 59px;
-        font-size: 15px;
-        opacity: 0; }
-      .nav-container #nav-icons a .projects, .nav-container #nav-icons div .projects {
-        margin-left: -50px; }
-      .nav-container #nav-icons a .blog, .nav-container #nav-icons div .blog {
-        margin-left: -35px; }
-      .nav-container #nav-icons a .exp, .nav-container #nav-icons div .exp {
-        margin-left: -60px; }
-      .nav-container #nav-icons a .skills, .nav-container #nav-icons div .skills {
-        margin-left: -40px; }
-      .nav-container #nav-icons a .contact, .nav-container #nav-icons div .contact {
-        margin-left: -47px; }
+        cursor: pointer; }
+      .nav-container #nav-icons div:hover + span {
+        opacity: 0.7; }
+    .nav-container #nav-icons span {
+      background-color: #16161c;
+      border-radius: 5px;
+      padding: 5px 10px;
+      text-align: left;
+      position: absolute;
+      margin-left: -42px;
+      margin-top: 69px;
+      font-size: 15px;
+      opacity: 0; }
+    .nav-container #nav-icons .projects {
+      margin-left: -78px; }
+    .nav-container #nav-icons .blog {
+      margin-left: -63px; }
+    .nav-container #nav-icons .exp {
+      margin-left: -88px; }
+    .nav-container #nav-icons .skills {
+      margin-left: -68px; }
+    .nav-container #nav-icons .contact {
+      margin-left: -75px; }
     .nav-container #nav-icons .chromeFix {
-      padding-right: 9px; }
+      padding-right: -19px; }
   .nav-container div {
     display: inline-block; }
 
