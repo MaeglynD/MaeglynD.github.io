@@ -617,9 +617,19 @@ body.nightmode .contact-container {
     .nav-container #nav-icons {
       padding-top: 10px;
       font-size: 20px; }
-      .nav-container #nav-icons div span {
-        margin-top: 47px;
+      .nav-container #nav-icons span {
+        margin-top: 57px;
         font-size: 15px; }
+      .nav-container #nav-icons .projects {
+        margin-left: -74px; }
+      .nav-container #nav-icons .blog {
+        margin-left: -59px; }
+      .nav-container #nav-icons .exp {
+        margin-left: -84px; }
+      .nav-container #nav-icons .skills {
+        margin-left: -64px; }
+      .nav-container #nav-icons .contact {
+        margin-left: -71px; }
 
   .main-container {
     height: 632px; }
@@ -834,7 +844,7 @@ body.nightmode .contact-container {
     float: left;
     padding: 0;
     margin-top: 16px; }
-    .nav-container #nav-icons a, .nav-container #nav-icons div {
+    .nav-container #nav-icons div {
       font-size: 15px;
       text-align: center;
       float: left;
@@ -843,8 +853,8 @@ body.nightmode .contact-container {
       border-radius: 0;
       padding: 10px 0;
       margin: 0; }
-      .nav-container #nav-icons a span, .nav-container #nav-icons div span {
-        margin-top: 35px; }
+    .nav-container #nav-icons span {
+      display: none; }
     .nav-container #nav-icons .chromeFix {
       padding-right: 0; }
 

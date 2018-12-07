@@ -751,10 +751,25 @@ body.nightmode{
     #nav-icons{
       padding-top: 10px;
       font-size: 20px;
-        div span{
-          margin-top: 47px;
-          font-size: 15px;
-        }
+      span{
+        margin-top: 57px;
+        font-size: 15px;
+      }
+      .projects{
+        margin-left: -74px;
+      }
+      .blog{
+        margin-left: -59px;
+      }
+      .exp{
+        margin-left: -84px;
+      }
+      .skills{
+        margin-left: -64px;
+      }
+      .contact{
+        margin-left: -71px;
+      }
       }
     }
     .main-container{
@@ -1059,7 +1074,7 @@ body.nightmode{
       float: left;
       padding: 0;
       margin-top: 16px;
-      a, div{
+       div{
         font-size: 15px;
         text-align: center;
         float: left;
@@ -1068,10 +1083,12 @@ body.nightmode{
         border-radius: 0;
         padding: 10px 0;
         margin: 0;
-        span{
-          margin-top: 35px;
-        }
+
       }
+      span{
+        display: none;
+      }
+
       .chromeFix{
         padding-right: 0;
       }
