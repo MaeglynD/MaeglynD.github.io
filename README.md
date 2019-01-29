@@ -1,10 +1,5 @@
-# STATIC
+# Personal Website
 
-**This directory is not required, you can delete it if you don't want to use it.**
+All of my projects, reasonings, blogs and so on are kept here. View the live site at https://maeglyn.xyz
 
-This directory contains your static files.
-Each file inside this directory is mapped to `/`.
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
