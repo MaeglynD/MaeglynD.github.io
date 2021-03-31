@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/projects/Telematics-software", {data:[{},{}],fetch:{},mutations:void 0});
