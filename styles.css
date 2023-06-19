@@ -41,3 +41,28 @@
 .m__icons a:hover{
   opacity: 0.8;
 }
+
+
+body{
+  margin: unset;
+}
+
+.a{
+  background: black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 100px;
+  border: none;
+  margin: none;
+  color: white;
+  font-size: 13px;
+}
+
+img{
+  max-width: 300px;
+  margin-bottom: 30px;
+}
