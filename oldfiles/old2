@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title> maeglyn </title>
+    <meta name="description" content=""/>
+
+    <link href="./styles.css" rel="stylesheet">
+  </head>
+	<body>
+    <div>
+
+
+      <img src="ule.png" />
+      <audio controls volume="0.2">
+        <source src="symbol.mp3" type="audio/mpeg">
+      </audio>
+      <script>
+        document.querySelector('audio').volume = 0.2;
+      </script>
+
+    </div>
+	</body>
+</html>

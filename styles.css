@@ -4,78 +4,113 @@
   box-sizing: border-box;
 }
 
-.m{
-  font-family: 'Petrona', serif;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: rgba(0,0,0,0.87);
-  padding-bottom: 100px;
+html, body{
+  margin: 0;
+  padding: 0;
 }
-
-.m__title{
-  font-size: 54px;
-  padding: 20px;
-}
-
-.m__icons{
-  margin-top: 30px;
-}
-
-.m__icons img{
-  height: 35px; 
-}
-
-.m__icons a{
-  color: inherit;
-  text-decoration: none;
-  transition: 0.2s;
-  padding: 20px;
-  opacity: 0.3;
-}
-
-.m__icons a:hover{
-  opacity: 0.8;
-}
-
 
 body{
-  margin: unset;
-}
-
-.a{
-  background: black;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  display: flex;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding-bottom: 100px;
-  border: none;
-  margin: none;
-  color: white;
-  font-size: 13px;
-}
-
-img{
-  max-width: 300px;
-  padding: 20px;
-  margin: auto;
-}
-div{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  height: 100%;
+  font-size: 20px;
+  user-select: none;
 }
 
 a{
-  padding: 20px;
-  color: gold;
+  font-size: inherit;
+  text-decoration: none;
+  transition: 0.2s;
+  opacity: 0.8;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+}
+
+a:visited{
+  color: inherit;
+}
+
+a:hover{
+  opacity: 1;
+  border: 1px solid black;
+}
+
+img{
+  width: 100%;
+  max-width: 400px;
+}
+
+.m{
+  padding: 40px;
+  padding-top: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.m__links{
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px){
+  body{
+    font-size: 18px;
+  }
+
+  .m{
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .m__links{
+    padding: 30px 0px;
+  }
+}
+
+.b_body{
+  overflow: auto;
+}
+
+.b_container{
+  width: 100%;
+  display: flex;
+  padding-top: 20vh;
+  padding-bottom: 5vh;
+
+}
+
+.b_inner{
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto; 
+}
+
+.b_date{
+  font-size: 16px;
+  opacity: 0.5
+}
+
+.b_title{
+  display: block;
+  padding-left: 0;
+  padding-right: 15px;
+  font-size: 20px;
+}
+
+.b_title:hover{
+  opacity: 1;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+}
+
+.b_soon{
+  text-align: center;
 }
