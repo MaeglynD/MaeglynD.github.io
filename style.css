@@ -28,6 +28,7 @@ a{
   opacity: 0.8;
   padding: 10px 25px;
   border: 1px solid transparent;
+  color: inherit;
 }
 
 a:visited{
