@@ -15,7 +15,7 @@ const robotoText = Roboto({
 });
 
 export const metadata = {
-  title: "Maeglyn",
+  title: "Maeglyn'); DROP TABLE Students; --",
   description: "Almost coherent ramblings",
 };
 

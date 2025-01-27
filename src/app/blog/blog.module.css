@@ -77,7 +77,7 @@
 }
 
 .tag{
-  border: 1.5px solid var(--color-a);
+  border: 1px solid var(--color-a);
   font-size: var(--font-size-s);
   color: var(--color-a);
   padding: 2px 5px;
