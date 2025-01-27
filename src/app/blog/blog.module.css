@@ -56,7 +56,8 @@
   min-width: 100px;
   max-width: 200px;
   width: 100%;
-
+  display: grid;
+  justify-content: end;
 }
 
 .thumb{
@@ -94,7 +95,7 @@
 
 .articleSection{
   color: var(--light);
-  font-size: 14px;
+  font-size: var(--font-size-m-alt);
   font-weight: 300;
   font-family: var(--font-roboto);
   letter-spacing: 0.1px;
@@ -131,8 +132,7 @@
 }
 
 .articleTitle{
-  font-size: 32px;
-  /* font-size: var(--font-size-l); */
+  font-size: var(--font-size-xl);
   font-family: var(--font-crimson-text);
 }
 
@@ -187,20 +187,14 @@
 
 }
 
-
-
 .codeBlock{
-  font-size: 10px;
+  font-size: var(--font-size-s);
 }
-
 
 .rightSection{
   height: 100%;
   display: grid;
   align-items: center;
-
-  
-
 }
 
 .rightSection img{
@@ -303,5 +297,72 @@ max-width: 230px;
   height: 100%;
 }
 
+@media(width < 960px){
+  .container{
+    max-width: 760px;;
+  }
 
+  .articleInner{
+    max-width: 700px;
+  }
 
+  .thumbContainer{
+    width: unset;
+  }
+
+  .thumb{
+    max-width: 100px;
+  }
+
+  .txtContainer{
+    padding-right: 30px;
+  }
+
+  .plotWrapper{
+    min-height: 100px;
+    height: 200px;
+    padding: 10px 0px;
+  }
+
+  .plotWrapper > div {
+    margin-left: 30px;
+  }
+
+  .sphericalSection img {
+    max-width: 130px;
+  }
+
+  .harmonics img{
+    max-width: 100px;
+  }
+
+  .rightSection img{
+    max-width: 150px;
+  }
+
+}
+
+@media (width < 600px){
+  .post{
+    flex-direction: column-reverse;
+  }
+
+  .thumbContainer{
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+    justify-content: center;
+    padding: 30px;
+    margin-bottom: 10px;
+  }
+
+  .thumb{
+    width: inherit;
+    min-width: 200px;
+    max-width: 250px;
+  }
+  
+  .articleSection{
+    padding: 20px 0px;
+  }
+}

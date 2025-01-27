@@ -5,9 +5,13 @@
 :root{
   --light: rgba(0,0,0,0.6);
   --dark: rgba(0,0,0,0.9);
-    --font-size-l: 26px;
-    --font-size-m: 14px;
+  --font-size-xl: 32px;
+  --font-size-l: 26px;
+  --font-size-m: 14px;
   --font-size-s: 10px;
+
+  --font-size-m-alt: 14px;
+
   --color-a: #458588;
 }
 
@@ -65,6 +69,9 @@ body{
 }
 
 .backBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width:50px;
   height: 50px;
   border-radius: 5px;
@@ -88,4 +95,33 @@ body{
 }
 .backBtn:active{
    background: rgba(0,0,0,0.1);
+}
+
+@media (width < 960px){
+  :root{
+    --font-size-xl: 26px;
+    --font-size-l: 20px;
+    --font-size-m: 10px;
+    --font-size-s: 8px;
+    --font-size-m-alt: 12px;
+  }
+
+  .katex{
+    font-size: 0.9em !important;
+  }
+}
+
+@media(width < 600px){
+    :root{
+    --font-size-xl: 24px;
+  }
+
+    .katex{
+    font-size: 0.72em !important;
+  }
+
+  .backBtn{
+    height: 40px;
+    width: 40px;
+  }
 }

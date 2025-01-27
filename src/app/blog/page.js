@@ -9,7 +9,7 @@ function Post({ id, title, desc, tags, thumb, href }) {
   return (
     <Link className={s.post} href={href}>
       <div className={s.dateContainer}>Jan. 2, 2025</div>
-      <div className={s.textContainer}>
+      <div className={s.txtContainer}>
         <div className={s.title}>{title}</div>
         <div className={s.desc}>{desc}</div>
         <div className={s.tags}>
