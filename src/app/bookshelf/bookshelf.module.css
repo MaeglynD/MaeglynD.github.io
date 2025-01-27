@@ -1,0 +1,13 @@
+.bookshelfContainer{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 80vh
+}
+
+.books{
+  font-family: var(--font-crimson-text);
+  font-size: var(--font-size-m);
+  color: var(--dark);
+  font-size: 24px;
+}

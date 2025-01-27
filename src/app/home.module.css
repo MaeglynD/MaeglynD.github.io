@@ -1,0 +1,40 @@
+
+.container{
+  font-size: 20px;
+  font-family: var(--font-crimson-text);
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 90vh; 
+  user-select: none;
+}
+
+.btnsContainer{
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn{
+  font-size: inherit;
+  text-decoration: none;
+  transition: 0.2s;
+  opacity: 0.8;
+  padding: 10px 35px;
+  border: 1px solid transparent;
+  color: inherit;
+}
+
+.btn:visited{
+  color: inherit;
+}
+
+.btn:hover{
+  opacity: 1;
+  border: 1px solid black;
+}

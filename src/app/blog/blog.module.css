@@ -1,0 +1,307 @@
+.container{
+  margin: auto;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+.post{
+  display: flex;
+  user-select: none;
+  transition: 0.2s;
+  padding: 30px;
+  user-select: none;
+}
+
+.post:hover{
+  background: rgba(0,0,0,0.04);
+}
+.post:hover .thumb{
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+.post:active{
+  background: rgba(0,0,0,0.1);
+}
+
+.dateContainer{
+  width: 100%;
+  max-width: 90px;
+  font-size: var(--font-size-s);
+  padding-top: 7px;
+  color: rgba(0,0,0,0.6);
+}
+
+.text-container{
+  /*  */
+  width: 100%;
+}
+
+.title{
+  font-family: var(--font-crimson-text);
+  font-size: var(--font-size-l);
+  color: var(--dark);
+}
+
+.desc{
+  font-family: var(--font-roboto);
+  font-size: var(--font-size-m);
+  color: var(--light);
+  line-height: 1.8;
+  font-weight: 300;
+  padding: 8px 0px;
+}
+
+.thumbContainer{
+  min-width: 100px;
+  max-width: 200px;
+  width: 100%;
+
+}
+
+.thumb{
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.tags{
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.tag{
+  border: 1.5px solid var(--color-a);
+  font-size: var(--font-size-s);
+  color: var(--color-a);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.articleTitle, .articleSection{
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  padding: 25px 0px;
+
+}
+
+.articleSection{
+  color: var(--light);
+  font-size: 14px;
+  font-weight: 300;
+  font-family: var(--font-roboto);
+  letter-spacing: 0.1px;
+}
+
+.articleSectionWide{
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: auto;
+}
+
+.codeblockWrapper{
+  margin-top: 30px;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+
+
+.articleInner{
+  padding: 0 30px;
+  padding-top: 10vh;
+  width: 100%;
+  position: relative;
+}
+
+.articleTitle{
+  font-size: 32px;
+  /* font-size: var(--font-size-l); */
+  font-family: var(--font-crimson-text);
+}
+
+.divider{
+  height: 0.5px;
+  background: #F3F3F3;
+  background: rgba(0,0,0,0.1);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  display: none;
+}
+
+.articleMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.articleContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 200px;
+}
+
+
+.articleSection{
+  line-height: 2;
+}
+
+.sandpackWrapper{
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.imgGroup{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 10px;
+
+}
+
+
+
+.codeBlock{
+  font-size: 10px;
+}
+
+
+.rightSection{
+  height: 100%;
+  display: grid;
+  align-items: center;
+
+  
+
+}
+
+.rightSection img{
+  max-width: 190px;
+  padding: 6px 0px;
+}
+
+.leftSection{
+  display: grid; 
+  width: 100%;
+  padding-right: 10px;
+}
+
+.horizontalImgGroup{
+  display: flex;
+  width: 100%;
+}
+
+.harmonicSection{
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  justify-content: flex-start;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+.harmonics{
+  display: grid;
+}
+
+.harmonics img{
+  max-width: 130px;
+  /* max-width: 33.3%; */
+}
+
+.sphericalSection img{
+max-width: 230px;
+  filter: saturate(.3);
+  height: fit-content;
+}
+
+.sphericalSection{
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 10px auto;
+}
+
+.lineBreak{
+  height: 10px;
+  width: 100%;
+}
+
+.wavefunctionPlot{
+  display: grid;
+  max-width: 800px;
+  width: 100%;
+  justify-self: center;
+  grid-template: 1fr / repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px 0px;
+}
+
+.wavefunctionPlot > div {
+  aspect-ratio: 1 / 1;
+}
+
+.plotWrapper{
+  max-width: 800px;
+  width: 100%;
+  display: grid;
+  padding: 30px;
+  margin: 20px 0px;
+  min-height: 350px;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.plotWrapper > div{
+      aspect-ratio: 2 / 1;
+      max-height: 340px;
+      height: 100%;
+      margin-left: 73px;
+}
+
+.skeletonLoaderContainer{
+  max-width: 850px;
+  height: 350px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.skeletonLoader{
+  height: 100%;
+}
+
+
+

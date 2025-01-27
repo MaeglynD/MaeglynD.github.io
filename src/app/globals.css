@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --light: rgba(0,0,0,0.6);
+  --dark: rgba(0,0,0,0.9);
+    --font-size-l: 26px;
+    --font-size-m: 14px;
+  --font-size-s: 10px;
+  --color-a: #458588;
+}
+
+*{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: white;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0,0,0,0);
+    -webkit-border-radius: 100px;
+    transition: 0.2s background-color;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.3);
+    -webkit-border-radius: 100px;
+    transition: 0.2s;
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgba(0,0,0,0.61);
+    -webkit-border-radius: 100px;
+}
+
+/* add vertical min-height & horizontal min-width */
+::-webkit-scrollbar-thumb:vertical {
+  min-height: 10px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  min-width: 10px;
+}
+
+.cm-scroller{
+  overflow-x: hidden !important;
+}
+
+.katex{
+  line-height: 2 !important;
+}
+
+.backBtn{
+  width:50px;
+  height: 50px;
+  border-radius: 5px;
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+  font-size: 16px;
+  z-index: 1;
+  transition: 0.2s;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.backBtn:visited{
+  color: inherit;
+}
+
+.backBtn:hover{
+  opacity: 1;
+   background: rgba(0,0,0,0.04);
+}
+.backBtn:active{
+   background: rgba(0,0,0,0.1);
+}
