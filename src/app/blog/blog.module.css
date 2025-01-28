@@ -94,9 +94,9 @@
 }
 
 .articleSection{
-  color: var(--light);
+  color: rgba(0,0,0,0.8);
   font-size: var(--font-size-m-alt);
-  font-weight: 300;
+  font-weight: 400;
   font-family: var(--font-roboto);
   letter-spacing: 0.1px;
 }

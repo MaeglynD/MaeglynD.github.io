@@ -27,7 +27,7 @@ export const sandpackCfg = {
     font: {
       body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
       mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
-      size: "8px",
+      size: "9px",
       lineHeight: "1.7",
     },
   },
