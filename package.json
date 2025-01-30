@@ -19,7 +19,8 @@
     "react-latex-next": "^3.0.0",
     "react-loading-skeleton": "^3.5.0",
     "react-plotly.js": "^2.6.0",
-    "react-syntax-highlighter": "^15.6.1"
+    "react-syntax-highlighter": "^15.6.1",
+    "shadertoy-react": "^1.1.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

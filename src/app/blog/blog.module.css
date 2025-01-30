@@ -85,6 +85,11 @@
   font-weight: 500;
 }
 
+.tag.WIP{
+  border: 1px solid #cf465f;
+  color: #cf465f;
+}
+
 .articleTitle, .articleSection{
   max-width: 700px;
   width: 100%;
@@ -366,3 +371,96 @@ max-width: 230px;
     padding: 20px 0px;
   }
 }
+
+.wikiExcerpt{
+  background: white;
+  padding: 20px;
+  width: 100%;
+  font-family: var(--font-roboto);
+  border: 1px solid var(--color-a);
+  border-radius: 3px;
+  white-space: break-spaces;
+}
+
+.wikiExcerptSub{
+  padding-bottom: 10px;
+}
+
+.wikiExcerpt ul{
+  list-style: circle;
+  padding: 10px 0px;
+  padding-left: 25px;
+  font-style: italic;
+}
+.wikiExcerpt li{
+  padding: 4px 0px
+}
+
+.wikiQuote{
+  font-style: italic;
+  margin-top: 20px;
+  opacity: 0.95;
+}
+
+.wikiLink{
+  color: var(--color-a);
+  text-decoration: underline;
+  display: block;
+  text-align: right;
+}
+
+.shaderArticle{
+  text-align: center;
+}
+
+.shaderArtContainer{
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding-top: 0;
+  margin-top: 30px;
+}
+.shaderVideoContainer .skeletonLoaderContainer{
+  height: 100% !important;
+}
+
+.shaderArtSubContainer .codeBlock{
+  overflow-x: hidden !important;
+}
+
+.shaderArtSubContainer{
+  display: grid;
+  height: 60vh;
+  max-height: 500px;
+  min-height: 300px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  
+  padding: 20px;
+}
+@media (width < 600px){
+  .shaderArtSubContainer{
+    grid-template-columns: auto;
+    max-height: unset;
+    height: 400px;
+
+  }
+}
+.shaderArtHeader{
+  font-size: var(--font-size-s);
+  padding: 10px 20px;
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.shaderVideo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 2px;
+}
+

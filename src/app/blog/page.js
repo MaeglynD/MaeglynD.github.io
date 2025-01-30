@@ -5,17 +5,17 @@ import Image from "next/image";
 import s from "./blog.module.css";
 import { gruvboxColors } from "./utils";
 
-function Post({ id, title, desc, tags, thumb, href }) {
+function Post({ id, title, desc, tags, thumb, href, date }) {
   return (
     <Link className={s.post} href={href}>
-      <div className={s.dateContainer}>Jan. 2, 2025</div>
+      <div className={s.dateContainer}>{date}</div>
       <div className={s.txtContainer}>
         <div className={s.title}>{title}</div>
         <div className={s.desc}>{desc}</div>
         <div className={s.tags}>
           {tags.map((tag, i) => (
             <div
-              className={s.tag}
+              className={`${s.tag} ${s[tag]}`}
               key={`tag-${i}`}
               // style={{ color: gruvboxColors[i + 5], borderColor: gruvboxColors[i + 5] }}
             >
@@ -32,22 +32,33 @@ function Post({ id, title, desc, tags, thumb, href }) {
 }
 
 const posts = [
-  //   {
-  //   id: 1,
-  //   title: "",
-  //   desc: ",
-  //   tags: ["Math"],
-  //   thumb: "/fluid-dynamics.png",
-  //   href: "/blog/visualising-hydrogen",
-  // },
   {
     id: 1,
+    date: "Jan. 17, 2025",
     title: " Visualising hydrogenic energy eigenfunctions, spherical harmonics and time-dependent oscillating orbitals",
     desc: "Taking a tourists stroll through a derivation of the hydrogen-like wavefunction and programming / rendering simulations for fun along the way",
     tags: ["Math", "Python", "JS", "Visualisation", "Physics"].sort((a, b) => a.localeCompare(b)),
     thumb: "/hydrogen/thumb.png",
     href: "/blog/visualising-hydrogen",
   },
+  {
+    id: 2,
+    date: "Jan. 2, 2025",
+    title: "The beauty of shader art",
+    desc: "Tryptamines? No thanks, I have a perfectly good inverseqrt, atan, smoothstep, mix, normalize, clamp, length, distance, dot, cross, reflect and refract at home",
+    tags: ["WIP", "Art", "GLSL", "Shaders"],
+    thumb: "/shader-art.png",
+    href: "/blog/the-beauty-of-shader-art",
+  },
+  // {
+  //   id: 3,
+  //   title: "God I love wikipedia so much",
+  //   desc: "I have a chronic wikipedia addiction and to keep this website from being txtdump of contextless excerpts I've opted for a containment zone.",
+  //   tags: ["Math"],
+  //   thumb: "/fluid-dynamics.png",
+  //   href: "/blog/wikipedia-excerpts",
+  // },
+
   // { title: "", desc: "", tags: [], thumb: "" },
 ];
 
