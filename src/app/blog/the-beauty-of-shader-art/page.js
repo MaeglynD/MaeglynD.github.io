@@ -13,7 +13,7 @@ import { _l3GBD1, _4f3SRN, _3dtSzN } from "./code-strs";
 import { useState, useEffect, Suspense, useRef } from "react";
 
 const shaders = [
-  { id: "L3GBD1", src: _l3GBD1, author: "Smull" },
+  { id: "l3GBD1", src: _l3GBD1, author: "Smull" },
   { id: "4f3SRN", src: _4f3SRN, author: "TristanC" },
   { id: "3dtSzN", src: _3dtSzN, author: "Krakel" },
 ];
@@ -77,7 +77,7 @@ export default function BeautyOfShaderArt() {
               <a href={`https://www.shadertoy.com/view/${id}`} target="_blank">
                 <Latex>
                   {String.raw`$\mathcal{\because \ \ `}
-                  {id}
+                  {id.toUpperCase()}
                   {String.raw`\text{\ by `}
                   {author}
                   {String.raw` }\ \therefore}$`}
