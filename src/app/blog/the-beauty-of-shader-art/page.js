@@ -10,7 +10,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import githubGist from "react-syntax-highlighter/dist/esm/styles/hljs/github-gist";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { _l3GBD1, _4f3SRN, _3dtSzN } from "./code-strs";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useRef } from "react";
 
 const shaders = [
   { id: "L3GBD1", src: _l3GBD1, author: "Smull" },
@@ -19,6 +19,14 @@ const shaders = [
 ];
 
 export default function BeautyOfShaderArt() {
+  const videos = useRef([]);
+
+  setTimeout(() => {
+    if (videos.current.length && videos.current[0]) {
+      videos.current[0].play();
+    }
+  }, 3000);
+
   return (
     <div className={s.articleContainer}>
       <div className={s.articleInner}>
@@ -34,15 +42,18 @@ export default function BeautyOfShaderArt() {
                   }
                 >
                   <video
+                    ref={(el) => (videos.current[i] = el)}
                     className={s.shaderVideo}
                     src={`/shader-art/${id}.mp4`}
                     muted
                     loop
                     playsInline
-                    autoPlay={i == 0}
                     onMouseEnter={(e) => {
                       if (e.target.paused && !e.target.hasClicked) {
-                        [...document.querySelectorAll("video")].forEach((x) => x.pause());
+                        videos.current.forEach((x) => {
+                          x.pause();
+                        });
+
                         e.target.play();
                       }
                     }}
