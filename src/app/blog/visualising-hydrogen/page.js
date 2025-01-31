@@ -52,7 +52,7 @@ export default function VisualisingHydrogen() {
           <div className={s.lineBreak} />
           Our goal: find the position-space representation of the wavefunction for an electron some radial distance{" "}
           <Latex>{`${String.raw`$\vec{r}$`}`}</Latex> away from the nucleus in a non-relativistic hydrogen-like atom in
-          a spherically symmetric Coulomb potential and milk it for all the pretty visuals we can get.
+          a spherically symmetric Coulomb potential and make some pretty pictures
         </div>
 
         <WavefunctionPlot className={s.wavefunctionPlot} />
@@ -94,7 +94,7 @@ L_z       &= -i \frac{\partial}{\partial\varphi}.
           </div>
           <div className={s.articleSection}>
             <i>
-              Ignoring spin (a coward's move, I know), the operators{" "}
+              Ignoring spin (a coward's move, yes), the operators{" "}
               <Latex>{String.raw`$ \{ \hat{H},  \hat{L^2},  L_z \} $`}</Latex> form a CSCO for{" "}
               <Latex>{String.raw`$L^2(\mathbb R \times S^2) \simeq L^2(\mathbb R^3)$`}</Latex>, and these eigenfunctions
               shall satisfy the following eigenvector/value equations:
