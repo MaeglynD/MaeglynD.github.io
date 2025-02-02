@@ -165,7 +165,7 @@ $$`}</Latex>
 
         <div className={s.articleSection}>
           We're discretizing things so we call it the 'Discrete Fourier Transform' / DFT. Now, a fourier space
-          representation of an image has 4 degrees of freedom (2D matrix with complex values), so it'll visually
+          representation of an image has 4 degrees of freedom (2D matrix with complex values), so it visually
           necessitates splitting into amplitude and phase. What if we zero out higher or lower frequencies and inverse
           FFT, effectively creating a quasi-aperture?:
         </div>
