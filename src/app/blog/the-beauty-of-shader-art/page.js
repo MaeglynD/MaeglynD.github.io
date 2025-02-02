@@ -68,21 +68,19 @@ export default function BeautyOfShaderArt() {
                     <source src="/shader-art/l3GBD1.mp4" type="video/mp4" />
                   </video>
                 </Suspense>
+                <a className={s.shaderArtLink} href={`https://www.shadertoy.com/view/${id}`} target="_blank">
+                  <Latex>
+                    {String.raw`$\mathcal{ \ \ `}
+                    {id.toUpperCase()}
+                    {String.raw`\text{\ by `}
+                    {author}
+                    {String.raw` }\ }$`}
+                  </Latex>
+                </a>
               </div>
               <SyntaxHighlighter className={s.codeBlock} language="GLSL" style={githubGist}>
                 {src}
               </SyntaxHighlighter>
-            </div>
-            <div className={s.shaderArtHeader}>
-              <a href={`https://www.shadertoy.com/view/${id}`} target="_blank">
-                <Latex>
-                  {String.raw`$\mathcal{\because \ \ `}
-                  {id.toUpperCase()}
-                  {String.raw`\text{\ by `}
-                  {author}
-                  {String.raw` }\ \therefore}$`}
-                </Latex>
-              </a>
             </div>
           </div>
         ))}

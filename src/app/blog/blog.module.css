@@ -424,8 +424,12 @@ max-width: 230px;
 .shaderVideoContainer .skeletonLoaderContainer{
   height: 100% !important;
 }
+.shaderVideoContainer{
+    position: relative;
+}
 
 .shaderArtSubContainer .codeBlock{
+  padding: 30px !important;
   overflow-x: hidden !important;
 }
 
@@ -435,10 +439,8 @@ max-width: 230px;
   max-height: 500px;
   min-height: 300px;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
   width: 100%;
-  
-  padding: 20px;
+  position: relative;
 }
 @media (width < 600px){
   .shaderArtSubContainer{
@@ -448,12 +450,19 @@ max-width: 230px;
 
   }
 }
-.shaderArtHeader{
-  font-size: var(--font-size-s);
-  padding: 10px 20px;
-  width: 100%;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  text-align: center;
+
+.shaderArtLink{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 10px;
+    text-align: right;
+    backdrop-filter: blur(10px);
+    font-size: 10px;
+    bottom: 0;
+    right: 0;
+    color: white;
+    border-radius: 5px;
+    margin-left: auto;
 }
 
 .shaderVideo{
