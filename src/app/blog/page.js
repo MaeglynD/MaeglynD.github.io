@@ -33,6 +33,15 @@ function Post({ id, title, desc, tags, thumb, href, date }) {
 
 const posts = [
   {
+    id: 0,
+    date: "Jan. 25, 2025",
+    title: "Fourier Transforms, Fourier Optics, Fourier Neural Operators and Fourier Island",
+    desc: "I've never been a big fan of the spatial domain",
+    tags: ["Math", "Optics", "Visualisation", "Functional analysis"],
+    thumb: "/fourier/thumb.png",
+    href: "/blog/fourier",
+  },
+  {
     id: 1,
     date: "Jan. 17, 2025",
     title: " Visualising hydrogenic energy eigenfunctions, spherical harmonics and time-dependent oscillating orbitals",
