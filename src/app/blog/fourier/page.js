@@ -10,6 +10,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import githubGist from "react-syntax-highlighter/dist/esm/styles/hljs/github-gist";
 import { basicFFTSpectrum, inverseFFT } from "./code-strs";
+import { Suspense } from "react";
 
 export default function Fourier() {
   return (
@@ -19,9 +20,40 @@ export default function Fourier() {
           Fourier Transforms, Fourier Optics, Fourier Neural Operators and Fourier Island
         </div>
         <div className={`${s.articleSection} ${s.fourierPictures}`}>
-          <Image className={s.articleImg} src="/fourier/fourier-great.png" width={230} height={500} alt="fourier" />
-          <Image className={s.articleImg} src="/fourier/fourier-less.png" width={230} height={500} alt="fourier" />
-          <Image className={s.articleImg} src="/fourier/fourier.png" width={230} height={500} alt="fourier" />
+          <Suspense
+            fallback={
+              <>
+                <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+              </>
+            }
+          >
+            <Image
+              className={s.articleImg}
+              src="/fourier/fourier-great.png"
+              width={230}
+              height={500}
+              alt="fourier"
+              priority={true}
+            />
+            <Image
+              className={s.articleImg}
+              src="/fourier/fourier-less.png"
+              width={230}
+              height={500}
+              alt="fourier"
+              priority={true}
+            />
+            <Image
+              className={s.articleImg}
+              src="/fourier/fourier.png"
+              width={230}
+              height={500}
+              alt="fourier"
+              priority={true}
+            />
+          </Suspense>
         </div>
         <div className={s.articleSection}>
           Before any fouriering, consider the space <Latex>{String.raw`$L^2(\mathbb{R})$`}</Latex>, the space of nice
@@ -146,10 +178,21 @@ $$`}</Latex>
 
         <div className={s.articleSectionIfftFlows}>
           <div className={s.ifftImgs}>
-            <Image src="/fourier/art-flow.png" width={1000} height={300} alt="fft flow" />
-            <Image src="/fourier/art-flow-invert.png" width={1000} height={300} alt="fft flow" />
-            <Image src="/fourier/constanza-flow.png" width={1000} height={300} alt="george constanza" />
-            <Image src="/fourier/constanza-flow-invert.png" width={1000} height={300} alt="george constanza" />
+            <Suspense
+              fallback={
+                <>
+                  <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                  <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                  <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                  <Skeleton containerClassName={s.skeletonLoaderContainer} className={s.skeletonLoader} count={1} />
+                </>
+              }
+            >
+              <Image src="/fourier/art-flow.png" width={1000} height={300} alt="fft flow" />
+              <Image src="/fourier/art-flow-invert.png" width={1000} height={300} alt="fft flow" />
+              <Image src="/fourier/constanza-flow.png" width={1000} height={300} alt="george constanza" />
+              <Image src="/fourier/constanza-flow-invert.png" width={1000} height={300} alt="george constanza" />
+            </Suspense>
           </div>
         </div>
 
