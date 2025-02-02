@@ -48,7 +48,7 @@ export default function VisualisingHydrogen() {
           </div>
         </div>
         <div className={s.articleSection}>
-          <i>Warning: light serving of math jargon. All interactive visuals have code attached :) </i>
+          <i>Warning: Math. All interactive visuals have code attached :) </i>
           <div className={s.lineBreak} />
           Our goal: find the position-space representation of the wavefunction for an electron some radial distance{" "}
           <Latex>{`${String.raw`$\vec{r}$`}`}</Latex> away from the nucleus in a non-relativistic hydrogen-like atom in
