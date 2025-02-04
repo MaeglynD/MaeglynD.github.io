@@ -72,8 +72,8 @@ export default function Design() {
           </div>
         </div>
 
-        <div className={s.designInner}>
-          {/* <Image
+        {/* <div className={s.designInner}>
+          <Image
           data-loaded="false"
           onLoad={(e) => {
             e.currentTarget.setAttribute("data-loaded", "true");
@@ -84,7 +84,7 @@ export default function Design() {
           priority={true}
           src="/design/abelian.png"
           alt="frechet"
-        /> */}
+        />
 
           <Image
             data-loaded="false"
@@ -104,7 +104,7 @@ export default function Design() {
               <div className={s.designDate}> 2024</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
