@@ -25,6 +25,9 @@ export default function Home() {
         <a className={s.btn} href="https://www.abelian.shop/" target="_blank">
           shirts
         </a>
+        <Link className={s.btn} href="/design">
+          design
+        </Link>
 
         {/* <Link className={s.btn} href="/bookshelf">
           bookshelf

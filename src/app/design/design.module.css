@@ -1,0 +1,62 @@
+.designContainer{
+  width: 100%;
+  max-width: 760px;
+  padding: 0 30px;
+  margin: auto;
+  padding-top: 12vh;
+  line-height: 2;
+  padding-bottom: 300px;
+}
+
+.designInner{
+  width: 100%;
+  margin-bottom: 80px; 
+}
+
+.designInner img{
+  width: auto;
+  outline: 1px solid rgba(0, 0, 0, 0.05);
+  outline-offset: 1px;
+  margin-top: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.designText{
+  min-height: 100px;
+}
+
+.designTitle{
+  padding-top: 15px;
+  font-size: var(--font-size-l);
+  font-family: var(--font-crimson-text);
+  display: flex;
+  width: 100%;
+  
+}
+.designDate{
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.full{
+  transition: 0.2s;
+  background: rgba(0,0,0,0.87);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  cursor: pointer;
+}
+
+.full.active{
+  z-index: 5;
+  opacity: 1;
+}
