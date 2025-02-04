@@ -60,3 +60,8 @@
   z-index: 5;
   opacity: 1;
 }
+
+.full img{
+  width: auto;
+  max-height: 80%;
+}
