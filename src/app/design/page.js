@@ -44,13 +44,47 @@ export default function Design() {
 
           <div className={s.designText}>
             <div className={s.designTitle}>
-              <div>Fréchet </div>
+              <div>Fréchet [concept] </div>
               <div className={s.designDate}> 2024</div>
             </div>
           </div>
         </div>
 
         <div className={s.designInner}>
+          <Image
+            data-loaded="false"
+            onLoad={(e) => {
+              e.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/90"
+            width={2384}
+            height={1500}
+            src="/design/niobium.png"
+            onClick={() => setFullSrc("/design/niobium.png")}
+            alt="frechet"
+          />
+
+          <div className={s.designText}>
+            <div className={s.designTitle}>
+              <div>Niobium [concept]</div>
+              <div className={s.designDate}> 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <div className={s.designInner}>
+          <Image
+            data-loaded="false"
+            onLoad={(e) => {
+              e.currentTarget.setAttribute("data-loaded", "true");
+            }}
+            className="data-[loaded=false]:animate-pulse data-[loaded=false]:bg-gray-100/90"
+            width={2384}
+            height={1500}
+            src="/design/misaki2.png"
+            onClick={() => setFullSrc("/design/misaki2.png")}
+            alt="frechet"
+          />
           <Image
             data-loaded="false"
             onLoad={(e) => {
@@ -66,7 +100,7 @@ export default function Design() {
 
           <div className={s.designText}>
             <div className={s.designTitle}>
-              <div>Concept </div>
+              <div>Untitled </div>
               <div className={s.designDate}> 2024</div>
             </div>
           </div>
