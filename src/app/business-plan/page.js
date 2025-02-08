@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function BusinessPlan() {
   return (
-    <div className="flex w-[768px] h-screen m-auto">
+    <div className="flex w-full max-w-[768px] h-screen m-auto">
       <Image
         className="h-fit w-full mt-[60px] rounded-[5px]"
         height={960}
