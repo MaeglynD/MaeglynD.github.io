@@ -12,12 +12,12 @@ export default function Home() {
         <div className={s.header}>About</div>
 
         <div className={s.desc}>
-          An About Section is a fascinating insight into a person's mind. Think about what it says about a person’s grip
+          An about section is a fascinating insight into a person's mind. Think about what it says about a person’s grip
           on reality, to confidently point and say <b>that</b> right there is me. The safety it exudes to embody labels
-          and tasks, as if they were a simple continuation of the environment and needn’t be feared, like a rock amidst
-          stream. Yes, surely anyone who’s able to write a simple yet direct About Section is trustworthy, reliable and
-          can safely be considered sane. (If you're a potential employer, please see my more serious About & Business
-          Section{" "}
+          and tasks, as if they themselves were simply a continuation of the environment and needn’t be feared, like a
+          rock amidst stream. Yes, surely anyone who’s able to write a simple yet direct about section is trustworthy,
+          reliable and can safely be considered sane. (If you're a potential employer, please see my more serious About
+          & Business Section{" "}
           <Link href="/business-plan" className="text-sky-500">
             here
           </Link>
