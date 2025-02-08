@@ -158,19 +158,37 @@ export default function Design() {
 
         <div className={s.designLinks}>
           <Link href="/design/frechet" className={s.designLink}>
-            <Image className={s.designImg} src="/design/frechet-thumb.png" height={540} width={968} alt="thumb" />
+            <Image
+              className={s.designImg}
+              src="/design/frechet/frechet-thumb.png"
+              height={540}
+              width={968}
+              alt="thumb"
+            />
             <div className={s.designTitle}>Fréchet</div>
             <div className={s.designDesc}>Conceptual beauty brand</div>
           </Link>
 
           <Link href="/design/bookmarker" className={s.designLink}>
-            <Image className={s.designImg} src="/design/bookmarker-thumb.png" height={540} width={968} alt="thumb" />
+            <Image
+              className={s.designImg}
+              src="/design/bookmarker/bookmarker-thumb.png"
+              height={540}
+              width={968}
+              alt="thumb"
+            />
             <div className={s.designTitle}>Bookmarker</div>
             <div className={s.designDesc}>Analytics, for bookmarks</div>
           </Link>
 
           <Link href="/design/niobium" className={s.designLink}>
-            <Image className={s.designImg} src="/design/niobium-thumb.png" height={540} width={968} alt="thumb" />
+            <Image
+              className={s.designImg}
+              src="/design/niobium/niobium-thumb.png"
+              height={540}
+              width={968}
+              alt="thumb"
+            />
             <div className={s.designTitle}>Niobium</div>
             <div className={s.designDesc}>Conceptual OS CFD software</div>
           </Link>
