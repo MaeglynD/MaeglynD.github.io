@@ -1,6 +1,6 @@
-import { Crimson_Text, Roboto } from "next/font/google";
-import BackBtn from "./back-button";
+import { Crimson_Text, Geist } from "next/font/google";
 import "./globals.css";
+import Nav from "./nav";
 
 const crimsonText = Crimson_Text({
   weight: ["400"],
@@ -8,22 +8,22 @@ const crimsonText = Crimson_Text({
   subsets: ["latin"],
 });
 
-const robotoText = Roboto({
-  weight: ["300", "400"],
-  variable: "--font-roboto",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
-  title: "Maeglyn'); DROP TABLE Students; --",
+  title: "<Maeglyn>",
   description: "Almost coherent ramblings",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body className={`${crimsonText.variable} ${robotoText.variable} antialiased`}>
-        <BackBtn />
+      <body className={`${crimsonText.variable} ${geistSans.variable} antialiased dark`}>
+        <Nav />
         {children}
       </body>
     </html>

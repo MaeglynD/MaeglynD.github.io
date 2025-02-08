@@ -1,42 +1,37 @@
 .designContainer{
-  width: 100%;
-  max-width: 760px;
-  padding: 0 30px;
+  max-width: 840px;
+  padding: 20px;
   margin: auto;
-  padding-top: 12vh;
   line-height: 2;
-  padding-bottom: 300px;
+  padding-bottom: 10vh;
 }
 
 .designInner{
   width: 100%;
-  margin-bottom: 100px;
+  padding-top: 30px;
+  max-width: 768px;
+  margin: auto;
 }
 
 .designInner img{
   width: auto;
   outline: 1px solid rgba(0, 0, 0, 0.05);
   outline-offset: 1px;
-  margin-top: 30px;
   border-radius: 10px;
   cursor: pointer;
 }
 
-.designText{
-  min-height: 100px;
+.designDesc{
+  color: var(--text-color-2);
+  padding-bottom: 20px;
 }
 
 .designTitle{
-  padding-top: 15px;
-  font-size: var(--font-size-l);
-  font-family: var(--font-crimson-text);
-  display: flex;
-  width: 100%;
-  
-}
-.designDate{
-  margin-left: auto;
-  opacity: 0.5;
+  font-size: 26px;
+  font-size: 32px;
+  font-weight: 600;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 .full{
@@ -44,6 +39,8 @@
   background: rgba(0,0,0,0.87);
   backdrop-filter: blur(5px);
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -64,4 +61,11 @@
 .full img{
   width: auto;
   max-height: 80%;
+}
+
+.designImgGridContainer{
+  display: grid;
+  grid-template-columns: 3.65fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
 }

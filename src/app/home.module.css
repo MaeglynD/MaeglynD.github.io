@@ -1,40 +1,140 @@
-
 .container{
-  font-size: 20px;
-  font-family: var(--font-crimson-text);
-  font-weight: 400;
-  font-style: normal;
-  color: black;
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  height: 90vh; 
-  user-select: none;
+  max-width: 840px;
+  padding: 20px;
+  margin: auto;
+  line-height: 2;
+  padding-bottom: 10vh;
 }
 
-.btnsContainer{
-  padding: 50px 0px;
+.me{
+  font-weight: 500;
+}
+
+.nav{
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+  padding: 0 30px;
+  max-width: 828px;
+  margin: auto;
+}
+
+.themeBtn{
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 1px solid transparent;
+}
+
+.themeBtn:hover{
+  border: var(--interaction-border);
+  border-radius: 5px;
+}
+
+.themeBtn:active{
+  background: rgba(75, 85, 99, 0.05);
+}
+
+.tabs{
+  color: var(--text-color-2);
+  height: 80px;
+  margin-left: auto;
+  align-items: center;
+  display: flex;
+}
+
+.tabs a{
+padding: 30px;
+}
+
+.desc{
+  color: var(--text-color-2);
+  padding-bottom: 20px;
+}
+
+.about, .blog .header, .design .header{
+  max-width: 768px;
+  margin: auto;
+}
+
+.header{
+  font-size: 26px;
+  font-size: 32px;
+  font-weight: 600;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.blogLink{
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid transparent; 
+}
+
+.designLink:hover, .blogLink:hover{
+  border: var(--interaction-border);
+}
+
+.thumb{
+  width: 70px;
+  height: auto;
+  margin-left: auto;
+  border-radius: 5px;
+}
+
+.blog .header, .design .header{
+  padding-bottom: 10px;
+}
+
+.blogText{
+  display: flex;
   flex-direction: column;
+  gap: 2px;
+
 }
 
-.btn{
-  font-size: inherit;
-  text-decoration: none;
-  transition: 0.2s;
-  opacity: 0.8;
-  padding: 10px 35px;
-  border: 1px solid transparent;
-  color: inherit;
+
+
+.blogDate{
+  
+  color: var(--text-color-3);
+  font-size: 13px;
 }
 
-.btn:visited{
-  color: inherit;
+.viewAll{
+  padding: 20px;
+  display:block;
+  text-decoration: underline;
 }
 
-.btn:hover{
-  opacity: 1;
-  border: 1px solid black;
+.designLinks{
+  padding-top: 10px;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+}
+
+
+.designLink{
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid transparent; 
+}
+
+.designImg{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.designDesc{
+  color: var(--text-color-3);
+  padding-bottom: 20px;
+}
+
+.designTitle{
+  padding-top: 14px;
 }

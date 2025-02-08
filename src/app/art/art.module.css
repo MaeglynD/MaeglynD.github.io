@@ -6,7 +6,7 @@
 }
 
 .artContainer{
-  font-family: var(--font-crimson-text);
+  /* font-family: var(--font-crimson-text); */
   font-size: var(--font-size-m);
   color: var(--dark);
   font-size: 24px;

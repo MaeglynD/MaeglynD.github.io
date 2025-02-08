@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import s from "../blog.module.css";
 import "katex/dist/katex.min.css";
@@ -232,26 +231,28 @@ $$
 
         <div className={s.articleSection}>
           This is the{" "}
-          <b>
-            <a href="https://en.wikipedia.org/wiki/Fraunhofer_diffraction_equation" target="_blank">
-              Fraunhofer diffraction pattern
-            </a>
-          </b>{" "}
+          <a
+            className="text-sky-500"
+            href="https://en.wikipedia.org/wiki/Fraunhofer_diffraction_equation"
+            target="_blank"
+          >
+            Fraunhofer diffraction pattern
+          </a>{" "}
           of the aperture. In microscopy, microscopes are setup in exactly this way, i think, which is why microscopes
           have finite spatial resolution. Higher fidelity, requires higher spatial frequencies. Whilst researching this
           I also came across one of{" "}
-          <a target="_blank" href="https://github.com/rafael-fuente/diffractsim">
+          <a className="text-sky-500" target="_blank" href="https://github.com/rafael-fuente/diffractsim">
             the most beautiful simulation libraries I've ever seen
           </a>{" "}
           by{" "}
-          <a href="https://github.com/rafael-fuente" target="_blank">
+          <a className="text-sky-500" href="https://github.com/rafael-fuente" target="_blank">
             Rafael Fuente:
           </a>
           <div className={s.simulationGifs}>
             <Image src="/fourier/gif2.gif" width={700} height={300} alt="diffraction simulation" />
           </div>
           Just watch{" "}
-          <a href="https://www.youtube.com/watch?v=Ft8CMEooBAE" target="_blank">
+          <a className="text-sky-500" href="https://www.youtube.com/watch?v=Ft8CMEooBAE" target="_blank">
             his video
           </a>{" "}
           all the way through, its mindblowing. If anyone knows where I can find more stuff like this please let me

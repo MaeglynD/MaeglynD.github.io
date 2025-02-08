@@ -1,5 +1,6 @@
 "use client";
 
+import { sandpackCfg } from "../utils";
 import Link from "next/link";
 import Image from "next/image";
 import s from "../blog.module.css";
@@ -7,7 +8,6 @@ import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
 import { wavefunctionJs, wavefunctionPy, sphericalHarmonicsPy } from "./code-strs.js";
 import { Sandpack } from "@codesandbox/sandpack-react";
-import { sandpackCfg } from "../utils";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import githubGist from "react-syntax-highlighter/dist/esm/styles/hljs/github-gist";
 import dynamic from "next/dynamic";
@@ -34,9 +34,7 @@ export default function VisualisingHydrogen() {
   return (
     <div className={s.articleContainer}>
       <div className={s.articleInner}>
-        <div className={s.articleTitle}>
-          Visualising hydrogenic energy eigenfunctions, spherical harmonics and time-dependent oscillating orbitals
-        </div>
+        <div className={s.articleTitle}>Visualising hydrogenic energy eigenfunctions and spherical harmonics</div>
         <div className={s.articleSectionWide}>
           <div className={s.sandpackWrapper}>
             <Sandpack
@@ -48,7 +46,7 @@ export default function VisualisingHydrogen() {
           </div>
         </div>
         <div className={s.articleSection}>
-          <i>Warning: Math. All interactive visuals have code attached :) </i>
+          {/* <i>Warning: Math. All interactive visuals have code attached :) </i> */}
           <div className={s.lineBreak} />
           Our goal: find the position-space representation of the wavefunction for an electron some radial distance{" "}
           <Latex>{`${String.raw`$\vec{r}$`}`}</Latex> away from the nucleus in a non-relativistic hydrogen-like atom in

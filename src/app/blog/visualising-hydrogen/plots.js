@@ -63,6 +63,7 @@ export function WavefunctionPlot({ ...props }) {
   const { grid, planes, metadata } = data;
   const { n, l, m } = metadata;
   const mx = 4 * (n + l);
+  const f = 1.2;
 
   const plots = Object.entries(planes).map(([plane, values]) => {
     return (
@@ -82,13 +83,13 @@ export function WavefunctionPlot({ ...props }) {
           layout={{
             xaxis: {
               title: "",
-              range: [-1.2 * mx, 1.2 * mx],
+              range: [-f * mx, f * mx],
               showticklabels: false,
               ticks: "",
             },
             yaxis: {
               title: "",
-              range: [-1.2 * mx, 1.2 * mx],
+              range: [-f * mx, f * mx],
               showticklabels: false,
               ticks: "",
             },
@@ -109,12 +110,12 @@ export function WavefunctionPlot({ ...props }) {
               },
               xaxis: {
                 title: "",
-                range: [-1.2 * mx, 1.2 * mx],
+                range: [-f * mx, f * mx],
                 showticklabels: false,
               },
               yaxis: {
                 title: "",
-                range: [-1.2 * mx, 1.2 * mx],
+                range: [-f * mx, f * mx],
                 showticklabels: false,
               },
             },
@@ -147,13 +148,13 @@ export function WavefunctionPlot({ ...props }) {
           layout={{
             xaxis: {
               title: "",
-              range: [-1.2 * mx, 1.2 * mx],
+              range: [-f * mx, f * mx],
               showticklabels: false,
               ticks: "",
             },
             yaxis: {
               title: "",
-              range: [-1.2 * mx, 1.2 * mx],
+              range: [-f * mx, f * mx],
               showticklabels: false,
               ticks: "",
             },
@@ -174,12 +175,12 @@ export function WavefunctionPlot({ ...props }) {
               },
               xaxis: {
                 title: "",
-                range: [-1.2 * mx, 1.2 * mx],
+                range: [-f * mx, f * mx],
                 showticklabels: false,
               },
               yaxis: {
                 title: "",
-                range: [-1.2 * mx, 1.2 * mx],
+                range: [-f * mx, f * mx],
                 showticklabels: false,
               },
             },
@@ -237,6 +238,8 @@ export function LegendrePlot({ ...props }) {
             ticks: "",
           },
           autosize: true,
+          paper_bgcolor: "transparent",
+          plot_bgcolor: "transparent",
           margin: {
             l: 0,
             r: 0,
@@ -287,6 +290,8 @@ export function LaguerrePlot({ ...props }) {
         data={traces}
         layout={{
           autoSize: true,
+          paper_bgcolor: "transparent",
+          plot_bgcolor: "transparent",
           xaxis: {
             title: "",
             showticklabels: false,
