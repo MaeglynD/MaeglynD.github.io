@@ -56,7 +56,7 @@ export default function Home() {
       <div className={s.design}>
         <div className={s.header}>Design </div>
 
-        <div className={s.designLinks}>
+        <div className={`${s.designLinks} grid-cols-[1fr_1fr]`}>
           <Link href="/design/frechet" className={s.designLink}>
             <Image
               className={s.designImg}
@@ -80,10 +80,10 @@ export default function Home() {
             <div className={s.designTitle}>Bookmarker</div>
             <div className={s.designDesc}>Analytics, for bookmarks</div>
           </Link>
-          <Link href="/design" className={s.viewAll}>
-            View all
-          </Link>
         </div>
+        <Link href="/design" className={s.viewAll}>
+          View all
+        </Link>
       </div>
     </div>
   );

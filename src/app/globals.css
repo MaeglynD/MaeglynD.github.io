@@ -131,7 +131,7 @@ body{
     --font-size-l: 20px;
     --font-size-m: 10px;
     --font-size-s: 8px;
-    --font-size-m-alt: 12px;
+    --font-size-m-alt: 16px;
   }
 
   .katex{
@@ -151,6 +151,12 @@ body{
   .backBtn{
     height: 40px;
     width: 40px;
+  }
+}
+
+@media(width < 460px){
+  .__Latex__{
+    font-size: 15px;
   }
 }
 
@@ -200,6 +206,15 @@ body{
   --sp-syntax-color-property: #77B7D7;
   --sp-syntax-color-static: #C64640;
   --sp-syntax-color-string: #977CDC;
+}
+
+/* bravo. bravo. */
+[style="color:#005cc5"] {
+    color: #3496ff !important;
+}
+
+[style="color:#032f62"]{
+  color: #98d0eb !important;
 }
 
 .dark .sp-preview-container{

@@ -156,7 +156,7 @@ export default function Design() {
       <div className={s.design}>
         <div className={s.header}>Design </div>
 
-        <div className={s.designLinks}>
+        <div className={`${s.designLinks} grid-cols-[1fr_1fr] grid-rows-[1fr_1fr]`}>
           <Link href="/design/frechet" className={s.designLink}>
             <Image
               className={s.designImg}
