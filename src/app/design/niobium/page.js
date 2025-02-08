@@ -58,7 +58,7 @@ export default function Bookmarker() {
           <div>
             <div className={s.designTitle}>Niobium</div>
             <div className={s.designDesc}>
-              A conceptual computational fluid dynamics OSS landing page. Named, for particular reason, after{" "}
+              A conceptual computational fluid dynamics OSS landing page. Named, for no particular reason, after{" "}
               <a href="https://en.wikipedia.org/wiki/Niobium_triselenide" target="_blank" className="text-sky-500">
                 niobium triselenide
               </a>
