@@ -209,11 +209,11 @@ body{
 }
 
 /* bravo. bravo. */
-[style="color:#005cc5"] {
+[style="color:#005cc5"], [style="color: rgb(3, 47, 98);"] {
     color: #3496ff !important;
 }
 
-[style="color:#032f62"]{
+[style="color:#032f62"], [style="color: rgb(0, 92, 197);"]{
   color: #98d0eb !important;
 }
 
