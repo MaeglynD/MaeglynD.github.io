@@ -18,10 +18,11 @@ export default function Home() {
           <a className="text-sky-500" href="https://en.wikipedia.org/wiki/Magnetohydrodynamics" target="_blank">
             magnetohydrodynamics
           </a>
-          ). If you're a potential employer, please see my more serious career page{" "}
+          ).
+          {/* If you're a potential employer, please see my more serious career page{" "}
           <Link href="/business-plan" className="text-sky-500">
             here
-          </Link>
+          </Link> */}
         </div>
       </div>
 
