@@ -362,7 +362,7 @@ $$`}</Latex>
           </a>
           , a computational astrophysicist who{" "}
           <a className="text-sky-500" href="https://www.youtube.com/channel/UCB2BslhkPMTkIicfoIBG0mQ" target="_blank">
-            casually posts humanity's most advanced simulations on most exotic phenomena known to exist in the universe
+            casually posts humanity's most advanced simulations on the most exotic phenomena to exist in the universe
           </a>{" "}
           alongside rock climbing videos on a fairly obscured youtube channel. They are beyond anything else I've ever
           seen and seriously beautiful. Its utterly remarkable that humans are capable of this, the magnitude of all of
