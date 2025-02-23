@@ -1,0 +1,89 @@
+:root {
+  --sp: -15px;
+  --sp2: -8px;
+}
+
+.container {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(337deg) rotateZ(0deg) rotateY(21deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  margin-left: 30%;
+  margin-top: 20%
+}
+
+
+.panel {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 2s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  height: 280px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+canvas {
+  width: 300px;
+  display: block;
+  height: 120%
+}
+
+.pos0 {
+  transform: translateZ(0px) rotateX(360deg) translateY(0);
+  z-index: 4;
+  opacity: 0.9;
+}
+
+.pos1 {
+  transform: translateZ(-100px) translate(calc(var(--sp) - 60px), var(--sp2)) translateY(calc(var(--sp2) * 1));
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.pos2 {
+  transform: translateZ(-200px) translate(calc(calc(var(--sp) - 60px) * 2), calc(var(--sp2) * 2))
+    translateY(calc(var(--sp2) * 2));
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.pos3 {
+  transform: translateZ(-300px) translate(calc(calc(var(--sp) - 60px) * 3), calc(var(--sp2) * 3))
+    translateY(calc(var(--sp2) * 3));
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.pos4 {
+  transform: translateZ(-400px) translate(calc(calc(var(--sp) - 60px) * 4), calc(var(--sp2) * 4)) rotateX(-180deg)
+    translateY(calc(var(--sp2) * -4));
+  z-index: 1;
+  opacity: 0.5;
+}
+
+
+@media (width < 960px){
+  :root {
+  --sp: -8px;
+  --sp2: -4px;
+}
+  .container{
+    height: 200px;
+    margin-top: 30%;
+  }
+  canvas{
+    width: 200px;
+  }
+  .panel{
+    height: 200px;
+  }
+}

@@ -10,6 +10,21 @@ export default function Blog() {
       <div className={s.blog}>
         <div className={s.header}>Posts</div>
 
+        <Link href="/blog/fluid-dynamics" className={s.blogLink}>
+          <div className={s.blogText}>
+            <div className={s.blogHead}>Checking in with the fluid dynamicists (and some light grmhd)</div>
+
+            <div className={s.blogDate}>17 Feb, 2025</div>
+          </div>
+          <Image
+            className={s.thumb}
+            src="/fluid-dynamics/thumb.png"
+            width={400}
+            height={400}
+            alt="fluid dynamics blog"
+          />
+        </Link>
+
         <Link href="/blog/fourier" className={s.blogLink}>
           <div className={s.blogText}>
             <div className={s.blogHead}>

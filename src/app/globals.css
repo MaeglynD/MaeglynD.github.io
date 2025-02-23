@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer utilities {
+  .mask-fade {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+}
+
 :root{
   /* --light: rgba(0,0,0,0.6); */
   --dark: #171717;
@@ -237,4 +246,14 @@ body{
 
 .__Latex__{
   color: var(--text-color);
+}
+
+.react-pdf__Document{
+  height: 100%;
+}
+
+.react-pdf__Document canvas, .react-pdf__Document .react-pdf__Page, .react-pdf__Page__textContent, .react-pdf__Document .react-pdf__Page__annotations {
+  height: 100% !important;
+  width: auto !important;
+
 }
