@@ -5,15 +5,15 @@
 
 .container {
   position: relative;
-  transform-style: preserve-3d;
-  transform: rotateX(337deg) rotateZ(0deg) rotateY(21deg);
+  /* transform-style: preserve-3d; */
+  /* transform: rotateX(337deg) rotateZ(0deg) rotateY(21deg); */
   display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
   width: 100%;
-  margin-left: 30%;
-  margin-top: 20%
+  /* margin-left: 30%; */
+  /* margin-top: 20% */
 }
 
 
@@ -27,18 +27,22 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  /* width: 80%; */
+  width: 100%;
 }
 
-canvas {
-  width: 300px;
+.panel canvas {
+  /* width: 300px; */
+  filter: var(--theme-filter);
+  width: 100%;
   display: block;
-  height: 120%
+  height: 200%
 }
 
 .pos0 {
-  transform: translateZ(0px) rotateX(360deg) translateY(0);
+  /* transform: translateZ(0px) rotateX(360deg) translateY(0); */
   z-index: 4;
   opacity: 0.9;
 }
@@ -76,7 +80,7 @@ canvas {
   --sp: -8px;
   --sp2: -4px;
 }
-  .container{
+  /* .container{
     height: 200px;
     margin-top: 30%;
   }
@@ -85,5 +89,5 @@ canvas {
   }
   .panel{
     height: 200px;
-  }
+  } */
 }

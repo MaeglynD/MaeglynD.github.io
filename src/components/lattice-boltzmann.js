@@ -7,13 +7,14 @@ const GRID_WIDTH = 512;
 const GRID_HEIGHT = 512;
 const TAU = 0.52;
 const U0 = 0.1;
-const STEPS_PER_FRAME = 5;
+const STEPS_PER_FRAME = 8;
 const SMOOTHING = 0.4;
 
 export default function LatticeBoltzmann() {
   const containerRef = useRef(null);
   const mainCanvasRef = useRef(null);
-  const copyCanvasRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+  const copyCanvasRefs = [useRef(null), useRef(null)];
+  // const copyCanvasRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
     const canvas = mainCanvasRef.current;
@@ -26,13 +27,13 @@ export default function LatticeBoltzmann() {
     }
     gl.getExtension("EXT_color_buffer_float");
 
-    copyCanvasRefs.forEach((ref) => {
-      const canvas = ref.current;
-      canvas.width = GRID_WIDTH;
-      canvas.height = GRID_HEIGHT;
-    });
+    // copyCanvasRefs.forEach((ref) => {
+    //   const canvas = ref.current;
+    //   canvas.width = GRID_WIDTH;
+    //   canvas.height = GRID_HEIGHT;
+    // });
 
-    let mousePos = { x: canvas.width * 0.3, y: canvas.height * 0.5 };
+    let mousePos = { x: canvas.width * 0.2, y: canvas.height * 0.5 };
     let obstacleCenter = { x: canvas.width * 0.2, y: canvas.height * 0.5 };
 
     const initData = initEquilibrium();
@@ -79,7 +80,7 @@ export default function LatticeBoltzmann() {
     }
 
     function handleMouseOut() {
-      mousePos.x = canvas.width * 0.3;
+      mousePos.x = canvas.width * 0.2;
       mousePos.y = canvas.height * 0.5;
     }
 
@@ -97,14 +98,14 @@ export default function LatticeBoltzmann() {
 
         render(gl, currentState, renderProgram, quadBuffer);
 
-        copyCanvasRefs.forEach((ref) => {
-          if (ref.current && canvas) {
-            const ctx = ref.current.getContext("2d");
-            if (ctx) {
-              ctx.drawImage(canvas, 0, 0);
-            }
-          }
-        });
+        // copyCanvasRefs.forEach((ref) => {
+        //   if (ref.current && canvas) {
+        //     const ctx = ref.current.getContext("2d");
+        //     if (ctx) {
+        //       ctx.drawImage(canvas, 0, 0);
+        //     }
+        //   }
+        // });
       }
 
       if (mainCanvasRef.current) {
@@ -116,43 +117,49 @@ export default function LatticeBoltzmann() {
       const panels = document.querySelectorAll(".panel");
       panels.forEach((panel) => {
         const currentPos = parseInt(panel.className.split("pos")[1]);
-        const nextPos = (currentPos + 1) % 5;
+        const nextPos = (currentPos + 1) % 3;
         panel.className = `panel pos${nextPos}`;
       });
     }
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseout", handleMouseOut);
+    // Get the pos0 panel
+    const pos0Panel = document.querySelector(".pos0");
+    if (pos0Panel) {
+      pos0Panel.addEventListener("mousemove", handleMouseMove);
+      pos0Panel.addEventListener("mouseout", handleMouseOut);
+    }
 
     let animationFrameId;
     animate();
-    const positionInterval = setInterval(cyclePositions, 10000);
+    // const positionInterval = setInterval(cyclePositions, 10000);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
       clearInterval(positionInterval);
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseout", handleMouseOut);
+      if (pos0Panel) {
+        pos0Panel.removeEventListener("mousemove", handleMouseMove);
+        pos0Panel.removeEventListener("mouseout", handleMouseOut);
+      }
     };
   }, []);
 
   return (
     <div className="container" ref={containerRef}>
-      <div className="panel pos0">
+      {/* <div className="panel pos0">
         <canvas ref={copyCanvasRefs[0]} style={{ filter: "invert(1)" }} />
-      </div>
-      <div className="panel pos1">
+      </div> */}
+      <div className="panel pos0">
         <canvas ref={mainCanvasRef} />
       </div>
-      <div className="panel pos2">
-        <canvas ref={copyCanvasRefs[1]} style={{ filter: "sepia(1)" }} />
-      </div>
-      <div className="panel pos3">
+      {/* <div className="panel pos2">
+        <canvas ref={copyCanvasRefs[1]} style={{ filter: "grayscale(1)" }} />
+      </div> */}
+      {/* <div className="panel pos3">
         <canvas ref={copyCanvasRefs[2]} style={{ filter: "grayscale(1)" }} />
       </div>
       <div className="panel pos4">
         <canvas ref={copyCanvasRefs[3]} style={{ filter: "invert(1) grayscale(1)" }} />
-      </div>
+      </div> */}
     </div>
   );
 }

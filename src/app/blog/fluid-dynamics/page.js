@@ -62,24 +62,26 @@ $$
           <Latex>{String.raw`$\mathbf{f}$`}</Latex> gravity plus any other external force. Note the lack of particles,
           we're in continuum mechanics territory and hence strictly deal with continuums.
         </div>
-        <div className={`${s.articleSection} flex justify-center items-center h-[400px] gap-[30px] !mb-[15px]`}>
-          <div className="h-full w-auto relative text-center">
+        <div
+          className={`${s.articleSection} flex items-center justify-center justify-items-center grid-cols-2  gap-[30px]`}
+        >
+          <div className="h-full relative text-center flex flex-col align-self-end">
             <Image
               src="/fluid-dynamics/navier.png"
               width={250}
               height={340}
               alt="navier"
-              className="h-full w-auto object-contain rounded-[5px]"
+              className=" object-contain rounded-[5px] mb-[10px] "
             />
             <Latex>{String.raw`$\text{Navier (stoked)}$`}</Latex>
           </div>
-          <div className="h-full w-auto relative text-center">
+          <div className="h-full relative text-center">
             <Image
               src="/fluid-dynamics/stokes.png"
               width={250}
               height={340}
               alt="stokes"
-              className="h-full w-auto object-contain rounded-[5px]"
+              className=" object-contain rounded-[5px] mb-[10px]"
             />
             <Latex>{String.raw`$\text{Stokes (not stoked)}$`}</Latex>
           </div>
@@ -112,26 +114,24 @@ $$
           the walls to be like pacman portals.
         </div>
 
-        <div
-          className={`${s.articleSection} flex justify-center items-center h-[300px] gap-[60px] !mb-[15px] !pt-[0px]`}
-        >
-          <div className="h-full w-auto  max-w-[300px] relative text-center">
+        <div className={`${s.articleSection} flex justify-center items-center gap-[60px] !pb-[15px]`}>
+          <div className="align-self-end w-auto  max-w-[300px] relative text-center">
             <Image
               src="/fluid-dynamics/noslip-vs-slip.png"
               width={250}
               height={340}
               alt="noslip vs slip boundary conditions"
-              className="h-full w-auto object-contain grayscale rounded-[5px]"
+              className=" w-auto object-contain grayscale rounded-[5px] mb-[10px]"
             />
             <Latex>{String.raw`$\text{No-Slip vs Slip BC}$`}</Latex>
           </div>
-          <div className="h-full w-auto relative text-center">
+          <div className="align-self-end w-auto relative text-center">
             <Image
               src="/fluid-dynamics/periodic-boundary.png"
               width={250}
               height={340}
               alt="periodic boundary conditions"
-              className="h-full w-auto object-contain grayscale rounded-[5px]"
+              className="max-h-[130px] w-auto object-contain grayscale rounded-[5px] mb-[10px]"
             />
             <Latex>{String.raw`$\text{Periodic BC}$`}</Latex>
           </div>
