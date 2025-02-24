@@ -135,7 +135,7 @@ export default function LatticeBoltzmann() {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      clearInterval(positionInterval);
+      // clearInterval(positionInterval);
       if (pos0Panel) {
         pos0Panel.removeEventListener("mousemove", handleMouseMove);
         pos0Panel.removeEventListener("mouseout", handleMouseOut);
