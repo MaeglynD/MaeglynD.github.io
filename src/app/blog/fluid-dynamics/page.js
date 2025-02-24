@@ -93,11 +93,11 @@ $$
           which were neccessarily created in the previous step by subtracting certain (gradients of) pressure fields
           which are pretty much defined to be vector fields that fix the divergence (via helmholtz-hodge, assuming the
           boundary is differentiable), rinse and repeat. One finds those pressure fields by reframing the problem as a
-          poisson-equation whose solutions admit those pressure fields. This is done in an iterative fashion (often
-          jacobi-iteration) and is easy on the GPU. Though if you're restricted to a small number of frame buffers its a
-          different story, which I think is the case with shadertoy. (I actually used Lattice-Boltzmann for the Kármán
-          Vortices above, <b>not</b> Joe-Stammian. They're different implementations but roughly live in the same
-          conceptual neighbourhood)
+          poisson-equation whose solutions admit those pressure fields. This is computed iteratively (often with
+          jacobi's method) and is inexpensive on the GPU. Though if you're restricted to a small number of frame buffers
+          you may run into some issues converging, as is the case in shaertoy. (I actually used Lattice-Boltzmann for
+          the Kármán Vortices above, <b>not</b> Joe-Stammian, they're different implementations but roughly live in the
+          same conceptual neighbourhood)
           {/* </div>
 
         <div className={s.articleSection}>
@@ -107,11 +107,11 @@ $$
         <div className={s.articleSection}> */}
           <br />
           <br />
-          There are other considerations like 'what do the walls mean?' in ones simulation, which are formally
-          characterised by boundary conditions. The two main ones being no-slip and periodic. The former, a dirichlet
-          boundary condition, encapsulates the observation that when you graze your hand over honey, the honey at the
-          very surface of your hand has zero velocity (or 'viscous fluids have zero bulk velocity'). The latter asserts
-          the walls to be like pacman portals.
+          There are other considerations like 'what do the walls mean?' with answers given in the form of boundary
+          conditions. The primary ones being no-slip and periodic. The former is a dirichlet boundary condition that
+          encapsulates the observation that when you graze your hand over honey, the honey at the very surface of your
+          hand has zero velocity (or 'viscous fluids have zero bulk velocity'). The latter asserts the walls to be like
+          pacman portals.
         </div>
 
         <div className={`${s.articleSection} flex justify-center items-center gap-[60px] !pb-[15px]`}>
@@ -147,7 +147,7 @@ $$
         </div> */}
 
         <div className={s.articleSection}>
-          Some more beautiful and less understandable visuals arise from the field of computational general relativistic
+          Some more beautiful and less understandable visuals arise from the field of computational relativistic
           magnetohydrodynamics, which studies plasma (and other electrically conducting fluids) travelling at
           relativistic speeds. Its the sledgehammer for the biggest nail's cosmology has to offer (relativistic jets,
           neutron star mergers, gamma ray bursts etc) with a formidable set of coupled nonlinear pde's that govern the
@@ -188,7 +188,7 @@ $$`}</Latex>
           >
             4256 CPU core compute cluster
           </a>{" "}
-          so we shall have to make do with whats available on arxiv:
+          so we shall have to make do with gawking at arxiv's most recent:
         </div>
 
         <div className={`${s.articleSection} relative flex max-h-[min(50vw,_550px)] h-[70vh] gap-[15px] !mb-[30px]`}>
@@ -356,7 +356,7 @@ $$`}</Latex>
           {/* And by far the most mind blowing visuals come from Matthew Liska, a computational astrophysicist who casually
           posts the most extraordinary simulations humanity has ever produced alongside rock climbing videos to a
           shockingly low-viewed youtube channel. I haven't seen anything remotely similar, they're seriously beautiful: */}
-          Isn't this incredible? Of particular note is the last papers author,{" "}
+          Isn't it all fascinating. Of particular note is the last papers author,{" "}
           <a className="text-sky-500" href="https://www.matthewliska.com/" target="_blank">
             Matthew Liska
           </a>
@@ -364,9 +364,9 @@ $$`}</Latex>
           <a className="text-sky-500" href="https://www.youtube.com/channel/UCB2BslhkPMTkIicfoIBG0mQ" target="_blank">
             casually posts humanity's most advanced simulations on the most exotic phenomena to exist in the universe
           </a>{" "}
-          alongside rock climbing videos on a fairly obscured youtube channel. They are beyond anything else I've ever
-          seen and seriously beautiful. Its utterly remarkable that humans are capable of this, the magnitude of all of
-          this is often lost on me.
+          alongside rock climbing videos on a fairly obscured youtube channel. They are beyond anything else I've seen
+          and seriously beautiful. Its utterly remarkable that humans are capable of this, the magnitude of it all is
+          often lost on me.
         </div>
         <div className={s.articleSection}></div>
       </div>
