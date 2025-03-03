@@ -13,15 +13,12 @@ export default function Home() {
 
         <div className={s.desc}>
           I'm a full stack engineer with main interests in UI design, mathematics, physics, neural networks and any and
-          all forms of visualisation.{" "}
-          {/* I love learning and am constantly researching (currently I'm fascinated by
+          all forms of visualisation. I love learning and am constantly researching (currently I'm fascinated by
           computational relativistic{" "}
           <a className="text-sky-500" href="https://en.wikipedia.org/wiki/Magnetohydrodynamics" target="_blank">
             magnetohydrodynamics
           </a>
-          ). 
-           */}
-          If you're a potential employer, please see my more serious career page{" "}
+          ). If you're a potential employer, please see my more serious career page{" "}
           <Link href="/business-plan" className="text-sky-500">
             here
           </Link>
