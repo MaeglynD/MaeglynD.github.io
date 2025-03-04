@@ -34,13 +34,13 @@ export default function FluidDynamics() {
           melodies and certain invariants in the space of dance moves correspond to physically realisable
           configurations.  */}
         <div className={s.articleSection}>
-          Fluid dynamics is one of the most beautiful areas of physics one can encounter, its the most natural
-          realisation of a completely endemic property of our universe. The weather flows like rivers flow like merging
-          black holes flow like potentials in a nervous system flow like brain waves flow. Okay not all of them flow the
-          same, but point is there are invariably governing equations that detail the dynamics of the evolution of
-          seemingly disparate systems that are composed of the same atomic ancestors that just so happen to find
-          themselves dancing to different melodies - and certain invariants in the space of dance moves point to
-          physically realisable configurations.
+          Fluid dynamics is one of the most beautiful areas of physics one can encounter as its the most natural line of
+          inquiry for inspecting a mysteriously endemic characteristic of reality. Weather flows like rivers flow like
+          merging black holes flow like potentials in a nervous system flow like brain waves flow. Okay, they dont
+          actually flow exactly the same, but the point is there are invariably governing equations that detail the
+          dynamics and evolution of disparate systems that are mostly composed of the same atomic ancestors that just so
+          happen to find themselves dancing along to different melodies - and certain invariants in the space of dance
+          moves point to physically realisable configurations.
           <br />
           <br />
           Its also quite eerie studying this stuff and seeing just how much psychology can be interpreted as a
