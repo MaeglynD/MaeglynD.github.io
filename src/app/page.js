@@ -28,7 +28,7 @@ export default function Home() {
       <div className={s.blog}>
         <div className={s.header}>Blog</div>
 
-        <Link href="/blog/fluid-dynamics" className={s.blogLink}>
+        {/* <Link href="/blog/fluid-dynamics" className={s.blogLink}>
           <div className={s.blogText}>
             <div className={s.blogHead}>Checking in with the fluid dynamicists (and some light grmhd)</div>
 
@@ -41,7 +41,7 @@ export default function Home() {
             height={400}
             alt="fluid dynamics blog"
           />
-        </Link>
+        </Link> */}
 
         <Link href="/blog/fourier" className={s.blogLink}>
           <div className={s.blogText}>
