@@ -34,19 +34,34 @@ export default function FluidDynamics() {
           melodies and certain invariants in the space of dance moves correspond to physically realisable
           configurations.  */}
         <div className={s.articleSection}>
-          Fluid dynamics is one of the most beautiful areas of physics one can encounter as its the most natural line of
-          inquiry for inspecting a mysteriously endemic characteristic of reality. Weather flows like rivers flow like
-          merging black holes flow like potentials in a nervous system flow like brain waves flow. Okay, they dont
-          actually flow exactly the same, but the point is there are invariably governing equations that detail the
-          dynamics and evolution of disparate systems that are mostly composed of the same atomic ancestors that just so
-          happen to find themselves dancing along to different melodies - and certain invariants in the space of dance
-          moves point to physically realisable configurations.
+          Fluid dynamics is beautiful. You can inquire into something as simple as 'how can I simulate water flowing'
+          and stumble into a line of inquiry that leads directly to one of (if not the most) endemic characteristics of
+          reality. Weather flows like rivers flow like merging black holes flow like potentials in a nervous system
+          flow. Actually they don't flow precisely the same, but does the phase space of answers to the question 'how
+          much do their flows differ' flow? Very quickly we can arrive at a new device for framing inspection rather
+          than a strict dependency of perception. I really like the way McLarty frames problem-solving using cohomology
+          in{" "}
+          <a href="https://www.landsburg.com/grothendieck/mclarty1.pdf" target="_blank" className="text-sky-500">
+            {" "}
+            this paper
+          </a>{" "}
+          and I think fluid dynamicists can take the steps far more literally than he intended: “Step 1. Find the
+          natural world for the problem”. Literally find the natural world and then the natural world for the natural
+          world.
           <br />
           <br />
-          Its also quite eerie studying this stuff and seeing just how much psychology can be interpreted as a
-          manifestation of basic numerical analysis (i.e if you want to <i>feel</i> what its like to diverge as a result
-          of the Courant-Friedrichs-Lewy condition just try thinking faster / broader and assess the difference in
-          phenomenology). Anyways, fluid dynamics is basically just the study of this one single equation:
+          I've also found that most of my psychology can be cast down into basic numerical analysis, like when I try to
+          think faster or with more breadth I'm pretty sure I get a taste of what it feels like to diverge as a result
+          of{" "}
+          <a
+            href="https://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition"
+            target="_blank"
+            className="text-sky-500"
+          >
+            CFL
+          </a>{" "}
+          (though I wonder the extent to which self-analysis in the frame of numerical analysis actually reifies those
+          divergences). Anyways, fluid dynamics is basically just the study of this one single equation:
         </div>
         <Latex>{String.raw`
 $$
@@ -59,8 +74,7 @@ $$
           where <Latex>{String.raw`$\mathbf{u}$`}</Latex> is the <b>flow velocity</b> and describes the motion of the
           entire continuous media (also called drift velocity in EM), <Latex>{String.raw`$\rho$`}</Latex> the density,{" "}
           <Latex>{String.raw`$\mu$`}</Latex> the dynamic viscosity coefficient and{" "}
-          <Latex>{String.raw`$\mathbf{f}$`}</Latex> gravity plus any other external force. Note the lack of particles,
-          we're in continuum mechanics territory and hence strictly deal with continuums.
+          <Latex>{String.raw`$\mathbf{f}$`}</Latex> gravity plus any other external force.
         </div>
         <div
           className={`${s.articleSection} flex items-center justify-center justify-items-center grid-cols-2  gap-[30px]`}
@@ -87,24 +101,17 @@ $$
           </div>
         </div>
         <div className={s.articleSection}>
-          There's many ways of actually simulating this evolution for a given set of initial conditions and all of them,
-          to a first approximation, follow the same basic procedure: take a discrete step forward in time, separately
-          apply the contribution to force given by advection / viscous diffusion / other forces, remove the divergences
-          which were neccessarily created in the previous step by subtracting certain (gradients of) pressure fields
-          which are pretty much defined to be vector fields that fix the divergence (via helmholtz-hodge, assuming the
-          boundary is differentiable), rinse and repeat. One finds those pressure fields by reframing the problem as a
-          poisson-equation whose solutions admit those pressure fields. This is computed iteratively (often with
-          jacobi's method) and is inexpensive on the GPU. Though if you're restricted to a small number of frame buffers
-          you may run into some issues converging, as is the case in shaertoy. (I actually used Lattice-Boltzmann for
-          the Kármán Vortices above, <b>not</b> Joe-Stammian, they're different implementations but roughly live in the
-          same conceptual neighbourhood)
-          {/* </div>
-
-        <div className={s.articleSection}>
-          // put python code samples and outputs of lattice boltzmann sims vs joe stammian sims
-        </div>
-
-        <div className={s.articleSection}> */}
+          There are different methods of actually simulating this evolution for a given set of initial conditions and
+          all of them, to a first approximation, follow a similar basic procedure: take a discrete step forward in time,
+          separately apply the contribution to force given by advection / viscous diffusion / other forces, remove the
+          divergences which were neccessarily created in the previous step by subtracting certain (gradients of)
+          pressure fields which are pretty much defined to be vector fields that fix the divergence (via
+          helmholtz-hodge, assuming the boundary is differentiable), repeat. The pressure fields are found by reframing
+          the problem as a poisson-equation whose solutions admit them as answers. This is computed iteratively (often
+          with jacobi's method) and is relatively inexpensive on the GPU unless you're restricted to a small number of
+          frame buffers, as you are in shadertoy, in which case you'll run into convergence issues. (I used
+          Lattice-Boltzmann for the Kármán Vortices above, <b>not</b> Joe-Stammian, they're different implementations
+          but roughly live in the same conceptual neighbourhood)
           <br />
           <br />
           There are other considerations like 'what do the walls mean?' with answers given in the form of boundary
@@ -149,9 +156,9 @@ $$
         <div className={s.articleSection}>
           Some more beautiful and less understandable visuals arise from the field of computational relativistic
           magnetohydrodynamics, which studies plasma (and other electrically conducting fluids) travelling at
-          relativistic speeds. Its the sledgehammer for the biggest nail's cosmology has to offer (relativistic jets,
-          neutron star mergers, gamma ray bursts etc) with a formidable set of coupled nonlinear pde's that govern the
-          interaction of the fluid with the electromagnetic field in curved spacetime:
+          relativistic speeds. Its the sledgehammer for very hard problems in cosmology (relativistic jets, neutron star
+          mergers, gamma ray bursts etc) with a formidable set of coupled nonlinear pde's that govern the interaction of
+          the fluid with the electromagnetic field in curved spacetime:
         </div>
 
         <div className={s.articleSection}>
@@ -177,10 +184,10 @@ $$`}</Latex>
           speeds respectively.
           <br />
           <br />
-          As per usual on this blog, we shall leave a comprehensible description and foundational motivation as an
-          exercise to the webcrawler and move swiftly on to what matters most. Pretty simulations. Unfortunately one
-          needs a supercomputer to solve these guys numerically and the University Of Cambridge has yet to return any of
-          my 372 emails requesting a free codesandbox hosted on their{" "}
+          As per usual on this blog, I shall leave a comprehensible description and foundational motivation as an
+          exercise to the webcrawler and move swiftly on to what matters most. Pretty simulations. Unfortunately you'd
+          need a supercomputer to solve these guys numerically and the University Of Cambridge has yet to return any of
+          my emails requesting a free codesandbox hosted on their{" "}
           <a
             href="https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html?utm_source=chatgpt.com#service-level-4-residual-usage"
             className="text-sky-500"
@@ -188,7 +195,7 @@ $$`}</Latex>
           >
             4256 CPU core compute cluster
           </a>{" "}
-          so we shall have to make do with gawking at arxiv's most recent:
+          so we'll have to make do with gawking at arxiv's most recent:
         </div>
 
         <div className={`${s.articleSection} relative flex max-h-[min(50vw,_550px)] h-[70vh] gap-[15px] !mb-[30px]`}>
@@ -356,19 +363,18 @@ $$`}</Latex>
           {/* And by far the most mind blowing visuals come from Matthew Liska, a computational astrophysicist who casually
           posts the most extraordinary simulations humanity has ever produced alongside rock climbing videos to a
           shockingly low-viewed youtube channel. I haven't seen anything remotely similar, they're seriously beautiful: */}
-          Isn't it all fascinating. Of particular note is the last papers author,{" "}
+          Isn't it all fascinating. The last papers author,{" "}
           <a className="text-sky-500" href="https://www.matthewliska.com/" target="_blank">
             Matthew Liska
           </a>
-          , a computational astrophysicist who{" "}
+          , also posts some of the most beautiful simulations I've seen on his{" "}
           <a className="text-sky-500" href="https://www.youtube.com/channel/UCB2BslhkPMTkIicfoIBG0mQ" target="_blank">
-            casually posts humanity's most advanced simulations on the most exotic phenomena to exist in the universe
+            {" "}
+            youtube channel
           </a>{" "}
-          alongside rock climbing videos on a fairly obscured youtube channel. They are beyond anything else I've seen
-          and seriously beautiful. Its utterly remarkable that humans are capable of this, the magnitude of it all is
-          often lost on me.
+          (alongside rock climbing videos, which are also pretty good). Its remarkable that humans are capable of any of
+          this, the magnitude of it all is often lost on me.
         </div>
-        <div className={s.articleSection}></div>
       </div>
     </div>
   );

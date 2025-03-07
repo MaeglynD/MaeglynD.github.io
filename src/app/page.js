@@ -12,15 +12,9 @@ export default function Home() {
         <div className={s.header}>About</div>
 
         <div className={s.desc}>
-          I'm a full stack engineer with main interests in UI design, mathematics, physics, neural networks and any and
-          all forms of visualisation.{" "}
-          {/* I love learning and am constantly researching (currently I'm fascinated by
-          computational relativistic{" "}
-          <a className="text-sky-500" href="https://en.wikipedia.org/wiki/Magnetohydrodynamics" target="_blank">
-            magnetohydrodynamics
-          </a>
-          ).  */}
-          If you're a potential employer, please see my more serious career page{" "}
+          Hi, I'm a full stack engineer with main interests in UI design, mathematics, physics, neural networks and all
+          forms of visualisation. I'm in love with learning and currently studying cellular and molecular biology in my
+          free time. If you're a potential employer, please see my more serious career page{" "}
           <Link href="/business-plan" className="text-sky-500">
             here
           </Link>
@@ -30,20 +24,14 @@ export default function Home() {
       <div className={s.blog}>
         <div className={s.header}>Blog</div>
 
-        {/* <Link href="/blog/fluid-dynamics" className={s.blogLink}>
+        <Link href="/blog/visualising-hydrogen" className={s.blogLink}>
           <div className={s.blogText}>
-            <div className={s.blogHead}>Checking in with the fluid dynamicists (and some light grmhd)</div>
+            <div className={s.blogHead}>Visualising hydrogenic energy eigenfunctions and spherical harmonics</div>
 
-            <div className={s.blogDate}>17 Feb, 2025</div>
+            <div className={s.blogDate}>27 Dec, 2024</div>
           </div>
-          <Image
-            className={s.thumb}
-            src="/fluid-dynamics/thumb.png"
-            width={400}
-            height={400}
-            alt="fluid dynamics blog"
-          />
-        </Link> */}
+          <Image className={s.thumb} src="/hydrogen/thumb.png" width={400} height={400} alt="hydrogen blog" />
+        </Link>
 
         <Link href="/blog/fourier" className={s.blogLink}>
           <div className={s.blogText}>
@@ -56,13 +44,19 @@ export default function Home() {
           <Image className={s.thumb} src="/fourier/thumb.png" width={400} height={400} alt="fourier blog" />
         </Link>
 
-        <Link href="/blog/visualising-hydrogen" className={s.blogLink}>
+        <Link href="/blog/fluid-dynamics" className={s.blogLink}>
           <div className={s.blogText}>
-            <div className={s.blogHead}>Visualising hydrogenic energy eigenfunctions and spherical harmonics</div>
+            <div className={s.blogHead}>Checking in with the fluid dynamicists (and some light grmhd)</div>
 
-            <div className={s.blogDate}>27 Dec, 2024</div>
+            <div className={s.blogDate}>17 Feb, 2025</div>
           </div>
-          <Image className={s.thumb} src="/hydrogen/thumb.png" width={400} height={400} alt="hydrogen blog" />
+          <Image
+            className={s.thumb}
+            src="/fluid-dynamics/thumb.png"
+            width={400}
+            height={400}
+            alt="fluid dynamics blog"
+          />
         </Link>
 
         <Link href="/blog" className={s.viewAll}>
