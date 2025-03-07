@@ -34,13 +34,12 @@ export default function FluidDynamics() {
           melodies and certain invariants in the space of dance moves correspond to physically realisable
           configurations.  */}
         <div className={s.articleSection}>
-          Fluid dynamics is beautiful. You can inquire into something as simple as 'how can I simulate water flowing'
-          and stumble into a line of inquiry that leads directly to one of (if not the most) endemic characteristics of
-          reality. Weather flows like rivers flow like merging black holes flow like potentials in a nervous system
-          flow. Actually they don't flow precisely the same, but does the phase space of answers to the question 'how
-          much do their flows differ' flow? Very quickly we can arrive at a new device for framing inspection rather
-          than a strict dependency of perception. I really like the way McLarty frames problem-solving using cohomology
-          in{" "}
+          Fluid dynamics is beautiful. You can ask something as simple as 'how can I simulate water flowing' and stumble
+          into a line of inquiry that leads directly to one of (if not the most) endemic characteristics of reality.
+          Weather flows like rivers flow like merging black holes flow like potentials in a nervous system flow.
+          Actually they don't flow precisely the same, but does the phase space of answers to the question 'how much do
+          their flows differ' flow? Very quickly we can arrive at a new device for framing inspection rather than a
+          strict dependency of perception. I really like the way McLarty frames problem-solving using cohomology in{" "}
           <a href="https://www.landsburg.com/grothendieck/mclarty1.pdf" target="_blank" className="text-sky-500">
             {" "}
             this paper
