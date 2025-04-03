@@ -26,7 +26,7 @@ const projects = [
   },
   {
     name: "Shapes&Colors",
-    imgs: Array.from({ length: 3 }, (_, i) => `./images/Shapes&Colors/${i}.png`),
+    imgs: Array.from({ length: 3 }, (_, i) => `./images/shapesandcolors/${i}.png`),
     link: "https://shapes-and-colors.vercel.app/",
   },
   {
