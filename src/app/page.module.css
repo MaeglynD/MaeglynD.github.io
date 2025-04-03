@@ -59,6 +59,11 @@
   width: auto;
   height: 100%;
 }
+@media (width < 900px){
+  .projectImg{
+    max-height: 200px;
+  }
+}
 
 .imgWrapper{
   border: 1px solid black;
