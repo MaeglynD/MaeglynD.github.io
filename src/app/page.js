@@ -1,100 +1,80 @@
 "use client";
 
-import Image from "next/image";
-import s from "./home.module.css";
-import Link from "next/link";
+import s from "./page.module.css";
+import ExportedImage from "next-image-export-optimizer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css";
+import "swiper/css/mousewheel";
+
+const projects = [
+  {
+    name: "Abelian",
+    imgs: Array.from({ length: 4 }, (_, i) => `./images/abelian/${i}.png`),
+    link: "https://www.abelian.shop/",
+  },
+  {
+    name: "Wakayama",
+    imgs: Array.from({ length: 5 }, (_, i) => `./images/wakayama/${i}.png`),
+    link: "http://wakayama.vercel.app/",
+  },
+  {
+    name: "Jyocho",
+    imgs: Array.from({ length: 3 }, (_, i) => `./images/jyocho/${i}.png`),
+    link: "https://maeglynd.github.io/jyocho",
+  },
+  {
+    name: "Shapes&Colors",
+    imgs: Array.from({ length: 3 }, (_, i) => `./images/Shapes&Colors/${i}.png`),
+    link: "https://shapes-and-colors.vercel.app/",
+  },
+  {
+    name: "S.L",
+    imgs: Array.from({ length: 4 }, (_, i) => `./images/sl/${i}.png`),
+    link: "https://github.com/MaeglynD/SL",
+  },
+];
 
 export default function Home() {
   return (
     <div className={s.container}>
-      {/* <Nav /> */}
-      <div className={s.about}>
-        <div className={s.header}>About</div>
-
-        <div className={s.desc}>
-          Hi, I'm a full stack engineer with main interests in UI design, mathematics, physics, neural networks and all
-          forms of visualisation. I'm in love with learning and currently studying cellular and molecular biology in my
-          free time. If you're a potential employer, please see my more serious career page{" "}
-          <Link href="/business-plan" className="text-sky-500">
-            here
-          </Link>
-        </div>
-      </div>
-
-      <div className={s.blog}>
-        <div className={s.header}>Blog</div>
-
-        <Link href="/blog/visualising-hydrogen" className={s.blogLink}>
-          <div className={s.blogText}>
-            <div className={s.blogHead}>Visualising hydrogenic energy eigenfunctions and spherical harmonics</div>
-
-            <div className={s.blogDate}>27 Dec, 2024</div>
-          </div>
-          <Image className={s.thumb} src="/hydrogen/thumb.png" width={400} height={400} alt="hydrogen blog" />
-        </Link>
-
-        <Link href="/blog/fourier" className={s.blogLink}>
-          <div className={s.blogText}>
-            <div className={s.blogHead}>
-              Fourier transforms, fourier optics, fourier neural operators and fourier island
+      <div className={s.projectsContainer}>
+        {projects.map((p, i) => (
+          <div key={`p-${i}`} className={s.project}>
+            <div className={s.projectImgs}>
+              <Swiper
+                className={s.swiper}
+                slidesPerView={"auto"}
+                spaceBetween={30}
+                loop={true}
+                navigation={false}
+                pagination={{
+                  clickable: true,
+                }}
+                mousewheel={true}
+                modules={[Mousewheel]}
+              >
+                {p.imgs.map((img, j) => (
+                  <SwiperSlide key={`p-${i}-img-${j}`} className={s.imgWrapper}>
+                    <ExportedImage
+                      src={img}
+                      alt={p.name}
+                      height={281}
+                      width={500}
+                      placeholder="blur"
+                      priority={true}
+                      className={s.projectImg}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
-
-            <div className={s.blogDate}>17 Jan, 2025</div>
+            <a target="_blank" href={p.link} className={s.projectTitle}>
+              {p.name}
+            </a>
           </div>
-          <Image className={s.thumb} src="/fourier/thumb.png" width={400} height={400} alt="fourier blog" />
-        </Link>
-
-        <Link href="/blog/fluid-dynamics" className={s.blogLink}>
-          <div className={s.blogText}>
-            <div className={s.blogHead}>Checking in with the fluid dynamicists (and some light grmhd)</div>
-
-            <div className={s.blogDate}>17 Feb, 2025</div>
-          </div>
-          <Image
-            className={s.thumb}
-            src="/fluid-dynamics/thumb.png"
-            width={400}
-            height={400}
-            alt="fluid dynamics blog"
-          />
-        </Link>
-
-        <Link href="/blog" className={s.viewAll}>
-          View all
-        </Link>
-      </div>
-
-      <div className={s.design}>
-        <div className={s.header}>Design </div>
-
-        <div className={`${s.designLinks} grid-cols-[1fr_1fr]`}>
-          <Link href="/design/frechet" className={s.designLink}>
-            <Image
-              className={s.designImg}
-              src="/design/frechet/frechet-thumb.png"
-              height={540}
-              width={968}
-              alt="thumb"
-            />
-            <div className={s.designTitle}>Fréchet</div>
-            <div className={s.designDesc}>Conceptual beauty brand</div>
-          </Link>
-
-          <Link href="/design/bookmarker" className={s.designLink}>
-            <Image
-              className={s.designImg}
-              src="/design/bookmarker/bookmarker-thumb.png"
-              height={540}
-              width={968}
-              alt="thumb"
-            />
-            <div className={s.designTitle}>Bookmarker</div>
-            <div className={s.designDesc}>Analytics, for bookmarks</div>
-          </Link>
-        </div>
-        <Link href="/design" className={s.viewAll}>
-          View all
-        </Link>
+        ))}
       </div>
     </div>
   );

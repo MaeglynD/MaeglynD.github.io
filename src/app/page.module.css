@@ -1,0 +1,87 @@
+.container{
+  width: 100%;
+  background: white;
+  padding: 30px 0px;
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+  padding-top: 150px;
+  user-select: none;
+}
+
+
+.projectsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
+}
+
+.projectsContainer > div:nth-child(odd){
+  align-self: flex-end;
+  text-align: right;
+}
+
+.project{
+  display: flex;
+  height: 20%;
+  flex-direction: column;
+  max-width: 90%;
+}
+
+.projectImgs{
+  display: grid;
+  grid-template-rows: 3fr 0.2fr;
+  z-index: 0;
+  cursor: grab;
+  /* mask-image: linear-gradient(90deg, transparent 0, white 20%, white 90%, transparent), linear-gradient(180deg, transparent 0, white 20%, white 90%, transparent), linear-gradient(270deg, transparent 0, white 20%, white 90%, transparent), linear-gradient(0deg, transparent 0, white 20%, white 90%, transparent);
+  mask-composite: intersect; */
+}
+/* .projectImgs:active{
+  cursor: grabbing;
+} */
+
+.swiper::after{
+   content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20%; /* Adjust width of fade area */
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 2;
+}
+
+
+.projectImg{
+  width: auto;
+  height: 100%;
+}
+
+.imgWrapper{
+  border: 1px solid black;
+  width: auto !important;
+}
+
+
+.projectTitle{
+  font-size: clamp(50px, 4vw, 100px);
+  transition: 0.2s;
+  cursor: pointer;  
+  padding: 0 20px;
+
+}
+
+.projectTitle:hover{
+  color: blue;
+  
+}
+
+.shaderTitle{
+  height: 200px;
+  width: 40%;
+  position: absolute;
+  z-index: 3;
+}
