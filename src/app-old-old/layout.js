@@ -15,8 +15,8 @@ const geistSans = Geist({
 });
 
 export const metadata = {
-  title: "Maeglyn",
-  description: "Metadata? I hardly knew her",
+  title: "<Maeglyn>",
+  description: "Almost coherent ramblings",
 };
 
 export default function RootLayout({ children }) {

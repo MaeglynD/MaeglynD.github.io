@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { simFragmentShaderSrc, renderFragmentShaderSrc } from "./shaders";
+import { simFragmentShaderSrc, renderFragmentShaderSrc, advectDyeFragmentShaderSrc } from "./shaders";
 import "./lattice-boltzmann-styles.css";
 
 const GRID_WIDTH = 512;
@@ -8,13 +8,11 @@ const GRID_HEIGHT = 512;
 const TAU = 0.52;
 const U0 = 0.1;
 const STEPS_PER_FRAME = 8;
-const SMOOTHING = 0.4;
+const SMOOTHING = 0.25;
 
 export default function LatticeBoltzmann() {
   const containerRef = useRef(null);
   const mainCanvasRef = useRef(null);
-  const copyCanvasRefs = [useRef(null), useRef(null)];
-  // const copyCanvasRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
     const canvas = mainCanvasRef.current;
@@ -27,85 +25,57 @@ export default function LatticeBoltzmann() {
     }
     gl.getExtension("EXT_color_buffer_float");
 
-    // copyCanvasRefs.forEach((ref) => {
-    //   const canvas = ref.current;
-    //   canvas.width = GRID_WIDTH;
-    //   canvas.height = GRID_HEIGHT;
-    // });
+    // The obstacle rests left-of-centre and eases toward the cursor.
+    const defaultPos = { x: canvas.width * 0.2, y: canvas.height * 0.5 };
+    const target = { x: defaultPos.x, y: defaultPos.y };
+    const obstacleCenter = { x: defaultPos.x, y: defaultPos.y };
 
-    let mousePos = { x: canvas.width * 0.2, y: canvas.height * 0.5 };
-    let obstacleCenter = { x: canvas.width * 0.2, y: canvas.height * 0.5 };
+    // Only run while the canvas is on screen.
+    let isVisible = true;
+    const visibilityObserver = new IntersectionObserver(([entry]) => (isVisible = entry.isIntersecting), { threshold: 0.01 });
+    visibilityObserver.observe(canvas);
 
     const initData = initEquilibrium();
-    const { currentState, nextState } = setupWebGLResources(gl, initData);
-    const { simProgram, renderProgram, quadBuffer } = setupPrograms(gl);
-
-    function get3DTransformedPosition(element, x, y) {
-      const panel = element.closest(".panel");
-      const container = element.closest(".container");
-      const rect = element.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const relX = x - centerX;
-      const relY = y - centerY;
-
-      const containerTransform = getComputedStyle(container).transform;
-      const panelTransform = getComputedStyle(panel).transform;
-
-      const containerMatrix = new DOMMatrix(containerTransform);
-      const panelMatrix = new DOMMatrix(panelTransform);
-      const combinedMatrix = containerMatrix.multiply(panelMatrix);
-      const inverseMatrix = combinedMatrix.inverse();
-
-      const transformedPoint = new DOMPoint(relX, relY, 0, 1).matrixTransform(inverseMatrix);
-
-      return {
-        x: transformedPoint.x + rect.width / 2,
-        y: transformedPoint.y + rect.height / 2,
-      };
-    }
+    const { currentState, nextState, dye } = setupWebGLResources(gl, initData);
+    const { simProgram, renderProgram, dyeProgram, quadBuffer } = setupPrograms(gl);
 
     function handleMouseMove(e) {
-      const frontCanvas = document.querySelector(".pos0 canvas");
-      const rect = frontCanvas.getBoundingClientRect();
-
-      const pos = get3DTransformedPosition(frontCanvas, e.clientX, e.clientY);
-
-      if (pos.x >= 0 && pos.x <= rect.width && pos.y >= 0 && pos.y <= rect.height) {
-        const scaleX = frontCanvas.width / rect.width;
-        const scaleY = frontCanvas.height / rect.height;
-        mousePos.x = pos.x * scaleX;
-        mousePos.y = frontCanvas.height - pos.y * scaleY;
-      }
+      const rect = canvas.getBoundingClientRect();
+      const xr = (e.clientX - rect.left) / rect.width;
+      const yr = (e.clientY - rect.top) / rect.height;
+      target.x = xr * GRID_WIDTH;
+      target.y = (1.0 - yr) * GRID_HEIGHT; // flip Y: DOM grows down, grid grows up
+    }
+    function handleMouseLeave() {
+      target.x = defaultPos.x;
+      target.y = defaultPos.y;
     }
 
-    function handleMouseOut() {
-      mousePos.x = canvas.width * 0.2;
-      mousePos.y = canvas.height * 0.5;
+    const interactionEl = containerRef.current;
+    if (interactionEl) {
+      interactionEl.addEventListener("mousemove", handleMouseMove);
+      interactionEl.addEventListener("mouseleave", handleMouseLeave);
     }
+
+    let animationFrameId;
 
     function animate() {
-      const isInView = window.scrollY < window.innerHeight;
+      if (isVisible) {
+        obstacleCenter.x += (target.x - obstacleCenter.x) * SMOOTHING;
+        obstacleCenter.y += (target.y - obstacleCenter.y) * SMOOTHING;
 
-      if (isInView) {
         for (let i = 0; i < STEPS_PER_FRAME; i++) {
-          stepSimulation(gl, currentState, nextState, simProgram, quadBuffer, mousePos, obstacleCenter);
+          stepSimulation(gl, currentState, nextState, simProgram, quadBuffer, obstacleCenter);
           [currentState.tex0, nextState.tex0] = [nextState.tex0, currentState.tex0];
           [currentState.tex1, nextState.tex1] = [nextState.tex1, currentState.tex1];
           [currentState.tex2, nextState.tex2] = [nextState.tex2, currentState.tex2];
           [currentState.fb, nextState.fb] = [nextState.fb, currentState.fb];
         }
 
-        render(gl, currentState, renderProgram, quadBuffer);
+        advectDye(gl, currentState, dye.read.tex, dye.write.fb, dyeProgram, quadBuffer, obstacleCenter);
+        [dye.read, dye.write] = [dye.write, dye.read];
 
-        // copyCanvasRefs.forEach((ref) => {
-        //   if (ref.current && canvas) {
-        //     const ctx = ref.current.getContext("2d");
-        //     if (ctx) {
-        //       ctx.drawImage(canvas, 0, 0);
-        //     }
-        //   }
-        // });
+        render(gl, currentState, dye.read.tex, renderProgram, quadBuffer);
       }
 
       if (mainCanvasRef.current) {
@@ -113,53 +83,26 @@ export default function LatticeBoltzmann() {
       }
     }
 
-    function cyclePositions() {
-      const panels = document.querySelectorAll(".panel");
-      panels.forEach((panel) => {
-        const currentPos = parseInt(panel.className.split("pos")[1]);
-        const nextPos = (currentPos + 1) % 3;
-        panel.className = `panel pos${nextPos}`;
-      });
-    }
-
-    // Get the pos0 panel
-    const pos0Panel = document.querySelector(".pos0");
-    if (pos0Panel) {
-      pos0Panel.addEventListener("mousemove", handleMouseMove);
-      pos0Panel.addEventListener("mouseout", handleMouseOut);
-    }
-
-    let animationFrameId;
     animate();
-    // const positionInterval = setInterval(cyclePositions, 10000);
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      // clearInterval(positionInterval);
-      if (pos0Panel) {
-        pos0Panel.removeEventListener("mousemove", handleMouseMove);
-        pos0Panel.removeEventListener("mouseout", handleMouseOut);
+      visibilityObserver.disconnect();
+      if (interactionEl) {
+        interactionEl.removeEventListener("mousemove", handleMouseMove);
+        interactionEl.removeEventListener("mouseleave", handleMouseLeave);
       }
     };
   }, []);
 
   return (
-    <div className="container" ref={containerRef}>
-      {/* <div className="panel pos0">
-        <canvas ref={copyCanvasRefs[0]} style={{ filter: "invert(1)" }} />
-      </div> */}
+    <div
+      className="container"
+      ref={containerRef}
+    >
       <div className="panel pos0">
         <canvas ref={mainCanvasRef} />
       </div>
-      {/* <div className="panel pos2">
-        <canvas ref={copyCanvasRefs[1]} style={{ filter: "grayscale(1)" }} />
-      </div> */}
-      {/* <div className="panel pos3">
-        <canvas ref={copyCanvasRefs[2]} style={{ filter: "grayscale(1)" }} />
-      </div>
-      <div className="panel pos4">
-        <canvas ref={copyCanvasRefs[3]} style={{ filter: "invert(1) grayscale(1)" }} />
-      </div> */}
     </div>
   );
 }
@@ -172,8 +115,8 @@ function initEquilibrium() {
 
   for (let i = 0; i < size; i++) {
     const rho = 1.0;
-    const ux = U0,
-      uy = 0.0;
+    const ux = U0;
+    const uy = 0.0;
     const uSqr = ux * ux + uy * uy;
 
     const f0 = (4 / 9) * rho * (1 - 1.5 * uSqr);
@@ -211,8 +154,8 @@ function setupWebGLResources(gl, initData) {
   function createTexture(width, height, data, channels = 4) {
     const tex = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, tex);
-    let internalFormat = gl.RGBA32F,
-      format = gl.RGBA;
+    let internalFormat = gl.RGBA32F;
+    let format = gl.RGBA;
     if (channels === 1) {
       internalFormat = gl.R32F;
       format = gl.RED;
@@ -238,7 +181,6 @@ function setupWebGLResources(gl, initData) {
       console.error("Framebuffer is not complete:", status);
       return null;
     }
-
     return fb;
   }
 
@@ -252,9 +194,38 @@ function setupWebGLResources(gl, initData) {
   const fbA = createFramebuffer(stateA_tex0, stateA_tex1, stateA_tex2);
   const fbB = createFramebuffer(stateB_tex0, stateB_tex1, stateB_tex2);
 
+  // Dye field: single-channel, linearly filtered, ping-ponged half-float pair
+  // (the LBM textures stay NEAREST for exact streaming).
+  function createDyeTexture() {
+    const tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.R16F, GRID_WIDTH, GRID_HEIGHT, 0, gl.RED, gl.HALF_FLOAT, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    return tex;
+  }
+
+  function createDyeFramebuffer(tex) {
+    const fb = gl.createFramebuffer();
+    gl.bindFramebuffer(gl.FRAMEBUFFER, fb);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, tex, 0);
+    gl.drawBuffers([gl.COLOR_ATTACHMENT0]);
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    return fb;
+  }
+
+  const dyeTexA = createDyeTexture();
+  const dyeTexB = createDyeTexture();
+  const dyeFbA = createDyeFramebuffer(dyeTexA);
+  const dyeFbB = createDyeFramebuffer(dyeTexB);
+
   return {
     currentState: { tex0: stateA_tex0, tex1: stateA_tex1, tex2: stateA_tex2, fb: fbA },
     nextState: { tex0: stateB_tex0, tex1: stateB_tex1, tex2: stateB_tex2, fb: fbB },
+    dye: { read: { tex: dyeTexA, fb: dyeFbA }, write: { tex: dyeTexB, fb: dyeFbB } },
   };
 }
 
@@ -285,7 +256,6 @@ function setupPrograms(gl) {
       console.error("Program link error:", gl.getProgramInfoLog(program));
       return null;
     }
-
     return program;
   }
 
@@ -304,15 +274,23 @@ function setupPrograms(gl) {
 
   const simProgram = createProgram(vertexShaderSrc, simFragmentShaderSrc);
   const renderProgram = createProgram(vertexShaderSrc, renderFragmentShaderSrc);
+  const dyeProgram = createProgram(vertexShaderSrc, advectDyeFragmentShaderSrc);
 
-  if (!simProgram || !renderProgram) {
+  if (!simProgram || !renderProgram || !dyeProgram) {
     throw new Error("Failed to create WebGL programs");
   }
 
-  return { simProgram, renderProgram, quadBuffer };
+  return { simProgram, renderProgram, dyeProgram, quadBuffer };
 }
 
-function stepSimulation(gl, currentState, nextState, simProgram, quadBuffer, mousePos, obstacleCenter) {
+function drawQuad(gl, quadBuffer) {
+  gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
+  gl.enableVertexAttribArray(0);
+  gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+  gl.drawArrays(gl.TRIANGLES, 0, 6);
+}
+
+function stepSimulation(gl, currentState, nextState, simProgram, quadBuffer, obstacleCenter) {
   gl.useProgram(simProgram);
   gl.bindFramebuffer(gl.FRAMEBUFFER, nextState.fb);
   gl.viewport(0, 0, GRID_WIDTH, GRID_HEIGHT);
@@ -329,18 +307,37 @@ function stepSimulation(gl, currentState, nextState, simProgram, quadBuffer, mou
 
   gl.uniform2f(gl.getUniformLocation(simProgram, "u_resolution"), GRID_WIDTH, GRID_HEIGHT);
   gl.uniform1f(gl.getUniformLocation(simProgram, "u_tau"), TAU);
-
-  obstacleCenter.x += (mousePos.x - obstacleCenter.x) * SMOOTHING;
-  obstacleCenter.y += (mousePos.y - obstacleCenter.y) * SMOOTHING;
   gl.uniform2f(gl.getUniformLocation(simProgram, "u_mouse"), obstacleCenter.x, obstacleCenter.y);
 
-  gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
-  gl.enableVertexAttribArray(0);
-  gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
-  gl.drawArrays(gl.TRIANGLES, 0, 6);
+  drawQuad(gl, quadBuffer);
 }
 
-function render(gl, currentState, renderProgram, quadBuffer) {
+function advectDye(gl, lbmState, dyeSrcTex, dstFb, dyeProgram, quadBuffer, obstacleCenter) {
+  gl.useProgram(dyeProgram);
+  gl.bindFramebuffer(gl.FRAMEBUFFER, dstFb);
+  gl.viewport(0, 0, GRID_WIDTH, GRID_HEIGHT);
+
+  gl.activeTexture(gl.TEXTURE0);
+  gl.bindTexture(gl.TEXTURE_2D, lbmState.tex0);
+  gl.uniform1i(gl.getUniformLocation(dyeProgram, "u_tex0"), 0);
+  gl.activeTexture(gl.TEXTURE1);
+  gl.bindTexture(gl.TEXTURE_2D, lbmState.tex1);
+  gl.uniform1i(gl.getUniformLocation(dyeProgram, "u_tex1"), 1);
+  gl.activeTexture(gl.TEXTURE2);
+  gl.bindTexture(gl.TEXTURE_2D, lbmState.tex2);
+  gl.uniform1i(gl.getUniformLocation(dyeProgram, "u_tex2"), 2);
+  gl.activeTexture(gl.TEXTURE3);
+  gl.bindTexture(gl.TEXTURE_2D, dyeSrcTex);
+  gl.uniform1i(gl.getUniformLocation(dyeProgram, "u_dye"), 3);
+
+  gl.uniform2f(gl.getUniformLocation(dyeProgram, "u_resolution"), GRID_WIDTH, GRID_HEIGHT);
+  gl.uniform2f(gl.getUniformLocation(dyeProgram, "u_mouse"), obstacleCenter.x, obstacleCenter.y);
+  gl.uniform1f(gl.getUniformLocation(dyeProgram, "u_dt"), STEPS_PER_FRAME);
+
+  drawQuad(gl, quadBuffer);
+}
+
+function render(gl, currentState, dyeTex, renderProgram, quadBuffer) {
   gl.useProgram(renderProgram);
   gl.bindFramebuffer(gl.FRAMEBUFFER, null);
   gl.viewport(0, 0, GRID_WIDTH, GRID_HEIGHT);
@@ -354,9 +351,11 @@ function render(gl, currentState, renderProgram, quadBuffer) {
   gl.activeTexture(gl.TEXTURE2);
   gl.bindTexture(gl.TEXTURE_2D, currentState.tex2);
   gl.uniform1i(gl.getUniformLocation(renderProgram, "u_tex2"), 2);
+  gl.activeTexture(gl.TEXTURE3);
+  gl.bindTexture(gl.TEXTURE_2D, dyeTex);
+  gl.uniform1i(gl.getUniformLocation(renderProgram, "u_dye"), 3);
 
-  gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
-  gl.enableVertexAttribArray(0);
-  gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
-  gl.drawArrays(gl.TRIANGLES, 0, 6);
+  gl.uniform2f(gl.getUniformLocation(renderProgram, "u_resolution"), GRID_WIDTH, GRID_HEIGHT);
+
+  drawQuad(gl, quadBuffer);
 }
